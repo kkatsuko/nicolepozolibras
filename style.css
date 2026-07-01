@@ -1,0 +1,1159 @@
+/* =================================
+VARIÁVEIS
+================================= */
+
+:root {
+  --fundo-principal: #F2E6D8;
+  --fundo-destaque: #E6D2B5;
+  --texto: #5A2E2E;
+  --texto-escuro: #3E1F1F;
+  --borda: rgba(90, 46, 46, 0.18);
+  --sombra: 0 6px 20px rgba(90, 46, 46, 0.08);
+}
+
+/* =================================
+BASE
+================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding-top: 60px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--fundo-principal);
+  color: var(--texto);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* =================================
+LAYOUT
+================================= */
+
+main {
+  margin-top: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 10px 0;
+}
+
+section {
+  padding: 34px 0;
+}
+
+/* =================================
+TIPOGRAFIA
+================================= */
+
+h1,
+h2,
+h3 {
+  color: var(--texto);
+}
+
+h1 {
+  margin: 20px 0 10px;
+  font-family: 'Cardo', serif;
+  font-size: 48px;
+}
+
+h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 18px;
+  font-family: 'Cardo', serif;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 8px auto 0;
+  background-color: var(--texto);
+  opacity: 0.3;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-family: 'Cardo', serif;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+p {
+  margin-top: 0;
+}
+
+.subtitulo {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.introducao-secao {
+  max-width: 650px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+/* =================================
+MENU
+================================= */
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+  background-color: var(--fundo-principal);
+  border-bottom: 1px solid rgba(90, 46, 46, 0.15);
+  transition:
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  padding: 0 20px;
+}
+
+.menu a {
+  flex-shrink: 0;
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  transition:
+    font-size 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  opacity: 0.7;
+}
+
+/* Menu compacto ao rolar */
+
+body.scrolled .menu {
+  padding: 10px 0;
+  box-shadow: 0 4px 12px rgba(90, 46, 46, 0.08);
+}
+
+body.scrolled .menu a {
+  font-size: 12px;
+}
+
+/* =================================
+HERO PRINCIPAL
+================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+  background-color: var(--fundo-destaque);
+}
+
+.hero-content {
+  transition: all 0.4s ease;
+}
+
+.hero-texto {
+  text-align: center;
+}
+
+.foto {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 8px solid var(--texto);
+  border-radius: 50%;
+}
+
+/* Cantoneira floral da hero principal */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 0;
+  width: 400px;
+  height: 400px;
+  background-image: url("cantoneira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* =================================
+INFOS DA HERO
+================================= */
+
+.infos span {
+  white-space: nowrap;
+}
+
+.infos span:not(:last-child)::after {
+  content: " • ";
+}
+
+/* =================================
+BOTÕES E LINKS
+================================= */
+
+.botao {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background-color: var(--texto);
+  color: var(--fundo-principal);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.botao:hover,
+.botao:focus-visible {
+  background-color: var(--texto-escuro);
+  transform: translateY(-1px);
+}
+
+.barra-contato a {
+  color: var(--texto);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.barra-contato a:hover,
+.barra-contato a:focus-visible {
+  color: var(--texto-escuro);
+}
+
+/* =================================
+ÂNCORAS E ALINHAMENTO DAS SEÇÕES
+================================= */
+
+.sobre,
+.atendimento,
+.libras,
+.como-funciona,
+.faq,
+.contato {
+  scroll-margin-top: 145px;
+  text-align: center;
+}
+
+.sobre .container,
+.atendimento .container,
+.libras .container,
+.como-funciona .container,
+.faq .container {
+  text-align: left;
+}
+
+.sobre h2,
+.atendimento h2,
+.libras h2,
+.como-funciona h2,
+.faq h2,
+.contato h2,
+.chamada-final h2 {
+  text-align: center;
+}
+
+/* =================================
+ACOLHIMENTO
+================================= */
+
+.acolhimento {
+  padding: 28px 0 6px;
+}
+
+.acolhimento-container {
+  max-width: 760px;
+}
+
+.acolhimento p {
+  margin: 0;
+  font-family: 'Cormorant Infant', serif;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.15;
+  text-align: left;
+}
+
+/* =================================
+SOBRE MIM
+================================= */
+
+.sobre {
+  padding-top: 18px;
+}
+
+.sobre .container {
+  max-width: 760px;
+}
+
+.sobre p:not(.citacao) {
+  text-align: left;
+}
+
+/* =================================
+CITAÇÃO
+================================= */
+
+.citacao {
+  position: relative;
+  max-width: 600px;
+  margin: 28px auto 0;
+  color: var(--texto);
+  font-family: 'Cardo', serif;
+  font-size: 25px;
+  font-style: italic;
+  line-height: 1.3;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.citacao::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  font-size: 40px;
+  opacity: 0.2;
+}
+
+.citacao::after {
+  content: "”";
+  position: absolute;
+  right: -15px;
+  bottom: -20px;
+  font-size: 40px;
+  opacity: 0.2;
+}
+
+/* =================================
+COMO POSSO AJUDAR
+================================= */
+
+.atendimento .container {
+  max-width: 1000px;
+}
+
+.cards-atendimento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card-atendimento {
+  padding: 21px;
+  background-color: rgba(242, 230, 216, 0.66);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 3px 12px rgba(90, 46, 46, 0.04);
+}
+
+.card-atendimento p {
+  margin-bottom: 0;
+}
+
+/* =================================
+LIBRAS
+================================= */
+
+.libras {
+  background-color: var(--fundo-destaque);
+  position: relative;
+  overflow: hidden;
+}
+
+.libras::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -60px;
+  width: 320px;
+  height: 320px;
+  background-image: url("cantoneira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.libras-container {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.libras-texto p {
+  text-align: left;
+}
+
+.libras .botao {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0;
+}
+
+/* =================================
+COMO FUNCIONA
+================================= */
+
+.como-funciona {
+  background-color: var(--fundo-destaque);
+}
+
+.como-funciona .container {
+  max-width: 1000px;
+}
+
+.passos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.passo {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 23px 20px 19px;
+  background-color: rgba(242, 230, 216, 0.65);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.passo p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.passo .passo-subtitulo {
+  margin: -4px 0 20px;
+  font-family: 'Cardo', serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--texto-escuro);
+}
+
+/* =================================
+PERGUNTAS FREQUENTES
+================================= */
+
+.faq .container {
+  max-width: 760px;
+}
+
+.faq-lista {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.faq details {
+  overflow: hidden;
+  background-color: rgba(230, 210, 181, 0.42);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+}
+
+.faq summary {
+  position: relative;
+  padding: 15px 48px 15px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  font-family: 'Cardo', serif;
+  font-size: 25px;
+  font-weight: 500;
+  transform: translateY(-50%);
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq details p {
+  margin: 0;
+  padding: 0 20px 16px;
+}
+
+/* =================================
+ENCERRAMENTO
+================================= */
+
+.encerramento {
+  background-color: var(--fundo-destaque);
+}
+
+.encerramento-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  padding: 0;
+}
+
+.chamada-final,
+.contato {
+  padding: 10px 42px;
+  text-align: center;
+}
+
+.contato {
+  border-left: 1px solid var(--borda);
+}
+
+.chamada-final p,
+.contato p {
+  text-align: center;
+}
+
+.chamada-final .botao {
+  margin-top: 18px;
+}
+
+.contato .botao {
+  margin-top: 4px;
+}
+
+/* =================================
+BARRA DE CONTATOS COMPLEMENTARES
+================================= */
+
+.barra-contato {
+  padding: 0;
+  background-color: var(--fundo-principal);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+}
+
+.barra-contato-container {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 14px 0;
+}
+
+.barra-contato a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  color: var(--texto);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.barra-contato span {
+  flex-shrink: 0;
+  font-family: 'Cardo', serif;
+  font-size: 18px;
+  color: var(--texto-escuro);
+}
+
+/* =================================
+FOOTER
+================================= */
+
+footer {
+  padding: 12px 20px;
+  background-color: var(--fundo-destaque);
+  border-top: 1px solid var(--borda);
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* =================================
+BARRAS COMPACTAS
+Escondidas por padrão
+================================= */
+
+.mobile-compact-hero,
+.desktop-compact-hero {
+  display: none !important;
+}
+
+/* =================================
+DESKTOP
+================================= */
+
+@media (min-width: 901px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 23px;
+  }
+
+  .menu a {
+    font-size: 15px;
+  }
+
+  body.scrolled .menu a {
+    font-size: 14px;
+  }
+
+  .acolhimento p,
+  .citacao {
+    font-size: 27px;
+  }
+
+  .passo .passo-subtitulo {
+    font-size: 21px;
+  }
+
+  .faq summary::after {
+    font-size: 27px;
+  }
+
+  .barra-contato a,
+  footer {
+    font-size: 16px;
+  }
+
+  .barra-contato span {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .acolhimento-container,
+  .sobre .container,
+  .libras-container,
+  .faq .container {
+    max-width: 840px;
+  }
+
+  .atendimento .container,
+  .como-funciona .container,
+  .encerramento-container {
+    max-width: 1080px;
+  }
+
+  .barra-contato-container {
+    max-width: 980px;
+  }
+
+  .hero {
+    padding: 20px 0;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 32px;
+    max-width: 1180px;
+    text-align: left;
+  }
+
+  .hero-texto {
+    text-align: left;
+  }
+
+  .hero h1 {
+    margin: 0 0 6px;
+    font-size: 46px;
+  }
+
+  .subtitulo {
+    margin: 0 0 10px;
+    font-size: 23px;
+  }
+
+  .infos {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .hero-botao {
+    margin-top: 0;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  /* Barra compacta desktop */
+
+  .desktop-compact-hero {
+    display: block !important;
+    position: fixed;
+    top: 39px;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 8px 5%;
+    background-color: var(--fundo-destaque);
+    color: var(--texto);
+    box-shadow: var(--sombra);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .desktop-compact-hero::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -20px;
+    z-index: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url("cantoneira.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.10;
+    pointer-events: none;
+  }
+
+  body.scrolled .desktop-compact-hero {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .desktop-compact-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 22px;
+    max-width: 1180px;
+    margin: auto;
+    text-align: left;
+  }
+
+  .desktop-compact-foto {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 4px solid var(--texto);
+    border-radius: 50%;
+  }
+
+  .desktop-compact-texto strong {
+    display: block;
+    font-family: 'Cardo', serif;
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .desktop-compact-texto span {
+    display: block;
+    margin-top: 3px;
+    font-size: 16px;
+  }
+
+  .desktop-compact-botao {
+    display: inline-block;
+    padding: 9px 22px;
+    background-color: var(--texto);
+    color: var(--fundo-principal);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .desktop-compact-botao:hover,
+  .desktop-compact-botao:focus-visible {
+    background-color: var(--texto-escuro);
+  }
+
+}
+
+/* =================================
+TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .menu-container {
+    gap: 26px;
+  }
+
+  .cards-atendimento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chamada-final,
+  .contato {
+    padding: 8px 28px;
+  }
+
+  .barra-contato-container {
+    gap: 22px;
+  }
+
+}
+
+/* =================================
+MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding-top: 48px;
+  }
+
+  section {
+    padding: 30px 0;
+  }
+
+  .container {
+    width: 88%;
+    padding: 8px 0;
+  }
+
+  /* Menu mobile em uma única linha */
+
+  .menu {
+    padding: 12px 0;
+  }
+
+.menu-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 8px;
+  overflow: hidden;
+}
+
+.menu a {
+  flex: 0 1 auto;
+  font-size: 11px;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+  body.scrolled .menu a {
+    font-size: 12px;
+  }
+
+  /* Hero principal */
+
+  .hero {
+    padding: 24px 0 20px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .hero .foto {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-width: 5px;
+  }
+
+  .hero h1 {
+    margin: 6px 0 0;
+    font-size: 34px;
+  }
+
+  .subtitulo {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .hero .infos {
+    display: none;
+  }
+
+  .hero-botao {
+    width: auto;
+    margin-top: 8px;
+    padding: 10px 24px;
+    text-align: center;
+  }
+
+  /* Títulos */
+
+  h2 {
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  /* Âncoras */
+
+  .sobre,
+  .atendimento,
+  .libras,
+  .como-funciona,
+  .faq,
+  .contato {
+    scroll-margin-top: 125px;
+  }
+
+  /* Acolhimento */
+
+  .acolhimento {
+    padding: 24px 0 4px;
+  }
+
+  .acolhimento p {
+    font-size: 23px;
+    line-height: 1.15;
+    text-align: left;
+  }
+
+  /* Sobre */
+
+  .sobre {
+    padding-top: 8px;
+  }
+
+  .sobre p:not(.citacao),
+  .libras-texto p {
+    text-align: left;
+  }
+
+  /* Citação */
+
+  .citacao {
+    padding: 0 12px;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .citacao::before {
+    left: 0;
+  }
+
+  .citacao::after {
+    right: 0;
+  }
+
+  /* Atendimento */
+
+  .cards-atendimento {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card-atendimento {
+    padding: 18px;
+  }
+
+/* Como funciona: carrossel horizontal */
+
+.passos {
+  display: flex;
+  gap: 14px;
+  width: auto;
+  max-width: none;
+  margin-right: -6%;
+  margin-left: -6%;
+  padding: 0 6% 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 6%;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.passos::-webkit-scrollbar {
+  display: none;
+}
+
+.passo {
+  flex: 0 0 82%;
+  height: auto;
+  padding: 20px 18px 18px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+  /* Perguntas frequentes */
+
+  .faq summary {
+    padding: 14px 44px 14px 17px;
+    font-size: 14px;
+  }
+
+  .faq summary::after {
+    right: 17px;
+  }
+
+  .faq details p {
+    padding: 0 17px 15px;
+    font-size: 14px;
+  }
+
+  /* Encerramento */
+
+  .encerramento-container {
+    grid-template-columns: 1fr;
+  }
+
+  .chamada-final,
+  .contato {
+    padding: 4px 0;
+  }
+
+  .contato {
+    margin-top: 24px;
+    padding-top: 26px;
+    border-top: 1px solid var(--borda);
+    border-left: 0;
+  }
+
+  .barra-contato-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 88%;
+    padding: 12px 0;
+  }
+
+  .barra-contato a {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  /* Barra compacta mobile */
+
+  .mobile-compact-hero {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 52px 6% 8px;
+    background-color: var(--fundo-destaque);
+    color: var(--texto);
+    box-shadow: var(--sombra);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  body.scrolled .mobile-compact-hero {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .mobile-compact-texto {
+    min-width: 0;
+    text-align: left;
+    line-height: 1.15;
+  }
+
+  .mobile-compact-texto strong {
+    display: block;
+    font-family: 'Cardo', serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .mobile-compact-texto span {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+  }
+
+  .mobile-compact-botao {
+    width: 76px;
+    flex-shrink: 0;
+    padding: 7px 8px;
+    background-color: var(--texto);
+    color: var(--fundo-principal);
+    text-decoration: none;
+    border-radius: 24px;
+    font-size: 12px;
+    line-height: 1.1;
+    font-weight: 500;
+    text-align: center;
+  }
+
+}
