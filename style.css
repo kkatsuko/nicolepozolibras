@@ -29,10 +29,6 @@ body {
   line-height: 1.6;
 }
 
-/* =================================
-LAYOUT
-================================= */
-
 main {
   margin-top: 0;
 }
@@ -52,9 +48,7 @@ section {
 TIPOGRAFIA
 ================================= */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: var(--texto);
 }
 
@@ -118,9 +112,7 @@ MENU
   padding: 15px 0;
   background-color: var(--fundo-principal);
   border-bottom: 1px solid rgba(90, 46, 46, 0.15);
-  transition:
-    padding 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-container {
@@ -137,17 +129,13 @@ MENU
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.8px;
-  transition:
-    font-size 0.3s ease,
-    opacity 0.3s ease;
+  transition: font-size 0.3s ease, opacity 0.3s ease;
 }
 
 .menu a:hover,
 .menu a:focus-visible {
   opacity: 0.7;
 }
-
-/* Menu compacto ao rolar */
 
 body.scrolled .menu {
   padding: 10px 0;
@@ -185,8 +173,6 @@ HERO PRINCIPAL
   border-radius: 50%;
 }
 
-/* Cantoneira floral da hero principal */
-
 .hero::after {
   content: "";
   position: absolute;
@@ -206,10 +192,6 @@ HERO PRINCIPAL
   position: relative;
   z-index: 1;
 }
-
-/* =================================
-INFOS DA HERO
-================================= */
 
 .infos span {
   white-space: nowrap;
@@ -232,9 +214,7 @@ BOTÕES E LINKS
   text-decoration: none;
   border-radius: 30px;
   font-weight: 500;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .botao:hover,
@@ -260,12 +240,7 @@ BOTÕES E LINKS
 ÂNCORAS E ALINHAMENTO DAS SEÇÕES
 ================================= */
 
-.sobre,
-.atendimento,
-.libras,
-.como-funciona,
-.faq,
-.contato {
+.sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
   scroll-margin-top: 145px;
   text-align: center;
 }
@@ -278,13 +253,8 @@ BOTÕES E LINKS
   text-align: left;
 }
 
-.sobre h2,
-.atendimento h2,
-.libras h2,
-.como-funciona h2,
-.faq h2,
-.contato h2,
-.chamada-final h2 {
+.sobre h2, .atendimento h2, .libras h2,
+.como-funciona h2, .faq h2, .contato h2, .chamada-final h2 {
   text-align: center;
 }
 
@@ -625,10 +595,14 @@ Escondidas por padrão
   display: none !important;
 }
 
-
 /* =================================
 ACESSO À VERSÃO EM LIBRAS
+(botão "Site em Libras" / seletor de idioma)
 ================================= */
+
+button {
+  font: inherit;
+}
 
 .hero-acoes,
 .desktop-compact-acoes,
@@ -637,6 +611,11 @@ ACESSO À VERSÃO EM LIBRAS
   align-items: center;
   justify-content: center;
   gap: 12px;
+}
+
+.hero-acoes {
+  flex-direction: column;
+  gap: 10px;
 }
 
 .hero-acoes .botao {
@@ -680,6 +659,10 @@ ACESSO À VERSÃO EM LIBRAS
   transform: translateY(-1px);
 }
 
+.desktop-compact-acoes {
+  gap: 10px;
+}
+
 .desktop-compact-libras {
   padding: 8px 17px;
   border-radius: 24px;
@@ -693,6 +676,7 @@ ACESSO À VERSÃO EM LIBRAS
 }
 
 .mobile-compact-libras {
+  width: 58px;
   padding: 7px 9px;
   border-radius: 22px;
   font-size: 11px;
@@ -700,7 +684,7 @@ ACESSO À VERSÃO EM LIBRAS
 }
 
 /* =================================
-PÁGINA EM LIBRAS
+PÁGINA EM LIBRAS (libras.html)
 ================================= */
 
 .pagina-libras {
@@ -904,6 +888,215 @@ PÁGINA EM LIBRAS
 }
 
 /* =================================
+MODO LIBRAS COM POP-UP DE VÍDEO
+(index.html — blocos e ícone)
+================================= */
+
+.conteudo-libras {
+  position: relative;
+}
+
+body.modo-libras .conteudo-libras {
+  cursor: pointer;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+body.modo-libras .card-atendimento,
+body.modo-libras .passo,
+body.modo-libras .faq details,
+body.modo-libras .hero-content,
+body.modo-libras .sobre .container,
+body.modo-libras .libras .container,
+body.modo-libras .atendimento .container,
+body.modo-libras .chamada-final,
+body.modo-libras .contato {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+body.modo-libras .conteudo-libras:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(242, 230, 216, 0.95),
+    0 0 0 6px rgba(90, 46, 46, 0.42);
+}
+
+/* Ícone "Em Libras" no lugar do texto */
+
+.indicador-libras {
+  display: none;
+}
+
+body.modo-libras .indicador-libras {
+  display: inline-flex;
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+body.modo-libras .indicador-libras img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body.modo-libras .hero-content,
+body.modo-libras .sobre .container,
+body.modo-libras .libras .container,
+body.modo-libras .atendimento .container,
+body.modo-libras .chamada-final,
+body.modo-libras .contato {
+  padding-bottom: 42px;
+}
+
+/* Pop-up de vídeo */
+
+.libras-popup[hidden] {
+  display: none;
+}
+
+.libras-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  pointer-events: none;
+}
+
+.libras-popup-fundo {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(40, 20, 20, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.libras-popup-caixa {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(560px, calc(100vw - 32px));
+  box-sizing: border-box;
+  padding: 22px;
+  background-color: var(--fundo-principal);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  box-shadow: 0 18px 55px rgba(62, 31, 31, 0.28);
+  opacity: 0;
+  transform: translate(-50%, -48%) scale(0.98);
+  pointer-events: auto;
+  animation: abrir-popup-libras 0.2s ease forwards;
+}
+
+.libras-popup.popup-fixo {
+  pointer-events: auto;
+}
+
+.libras-popup.popup-fixo .libras-popup-fundo {
+  background-color: rgba(40, 20, 20, 0.48);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.popup-libras-aberto {
+  overflow: hidden;
+}
+
+@keyframes abrir-popup-libras {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.libras-popup-caixa h2 {
+  display: block;
+  margin: 0 42px 16px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.libras-popup-fechar {
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--texto);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.libras-popup-fechar:hover,
+.libras-popup-fechar:focus-visible {
+  background-color: rgba(90, 46, 46, 0.1);
+}
+
+.libras-popup-video {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  place-items: center;
+  background-color: var(--fundo-destaque);
+  border-radius: 14px;
+}
+
+.libras-popup-video iframe,
+.libras-popup-video video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+.libras-video-vazio {
+  display: grid;
+  gap: 5px;
+  padding: 24px;
+  place-items: center;
+  text-align: center;
+}
+
+.libras-video-vazio span {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  background-color: var(--texto);
+  color: var(--fundo-principal);
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.libras-video-vazio strong {
+  font-family: 'Cardo', serif;
+  font-size: 24px;
+}
+
+.libras-video-vazio small {
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =================================
 DESKTOP
 ================================= */
 
@@ -1016,8 +1209,6 @@ DESKTOP
     white-space: nowrap;
   }
 
-  /* Barra compacta desktop */
-
   .desktop-compact-hero {
     display: block !important;
     position: fixed;
@@ -1034,9 +1225,7 @@ DESKTOP
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   .desktop-compact-hero::after {
@@ -1160,35 +1349,31 @@ MOBILE
     padding: 8px 0;
   }
 
-  /* Menu mobile em uma única linha */
-
   .menu {
     padding: 12px 0;
   }
 
-.menu-container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 8px;
-  overflow: hidden;
-}
+  .menu-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    overflow: hidden;
+  }
 
-.menu a {
-  flex: 0 1 auto;
-  font-size: 11px;
-  letter-spacing: 0.1px;
-  white-space: nowrap;
-}
+  .menu a {
+    flex: 0 1 auto;
+    font-size: 11px;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+  }
 
   body.scrolled .menu a {
     font-size: 12px;
   }
-
-  /* Hero principal */
 
   .hero {
     padding: 24px 0 20px;
@@ -1230,8 +1415,6 @@ MOBILE
     text-align: center;
   }
 
-  /* Títulos */
-
   h2 {
     margin-bottom: 16px;
     font-size: 28px;
@@ -1241,18 +1424,9 @@ MOBILE
     font-size: 20px;
   }
 
-  /* Âncoras */
-
-  .sobre,
-  .atendimento,
-  .libras,
-  .como-funciona,
-  .faq,
-  .contato {
+  .sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
     scroll-margin-top: 125px;
   }
-
-  /* Acolhimento */
 
   .acolhimento {
     padding: 24px 0 4px;
@@ -1264,8 +1438,6 @@ MOBILE
     text-align: left;
   }
 
-  /* Sobre */
-
   .sobre {
     padding-top: 8px;
   }
@@ -1274,8 +1446,6 @@ MOBILE
   .libras-texto p {
     text-align: left;
   }
-
-  /* Citação */
 
   .citacao {
     padding: 0 12px;
@@ -1291,8 +1461,6 @@ MOBILE
     right: 0;
   }
 
-  /* Atendimento */
-
   .cards-atendimento {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1302,36 +1470,32 @@ MOBILE
     padding: 18px;
   }
 
-/* Como funciona: carrossel horizontal */
+  .passos {
+    display: flex;
+    gap: 14px;
+    width: auto;
+    max-width: none;
+    margin-right: -6%;
+    margin-left: -6%;
+    padding: 0 6% 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 6%;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.passos {
-  display: flex;
-  gap: 14px;
-  width: auto;
-  max-width: none;
-  margin-right: -6%;
-  margin-left: -6%;
-  padding: 0 6% 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 6%;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
+  .passos::-webkit-scrollbar {
+    display: none;
+  }
 
-.passos::-webkit-scrollbar {
-  display: none;
-}
-
-.passo {
-  flex: 0 0 82%;
-  height: auto;
-  padding: 20px 18px 18px;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-  /* Perguntas frequentes */
+  .passo {
+    flex: 0 0 82%;
+    height: auto;
+    padding: 20px 18px 18px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 
   .faq summary {
     padding: 14px 44px 14px 17px;
@@ -1346,8 +1510,6 @@ MOBILE
     padding: 0 17px 15px;
     font-size: 14px;
   }
-
-  /* Encerramento */
 
   .encerramento-container {
     grid-template-columns: 1fr;
@@ -1382,8 +1544,6 @@ MOBILE
     line-height: 1.35;
   }
 
-  /* Barra compacta mobile */
-
   .mobile-compact-hero {
     display: flex !important;
     position: fixed;
@@ -1402,9 +1562,7 @@ MOBILE
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   body.scrolled .mobile-compact-hero {
@@ -1422,14 +1580,14 @@ MOBILE
   .mobile-compact-texto strong {
     display: block;
     font-family: 'Cardo', serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
   }
 
   .mobile-compact-texto span {
     display: block;
     margin-top: 2px;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .mobile-compact-botao {
@@ -1446,6 +1604,11 @@ MOBILE
     text-align: center;
   }
 
+  .mobile-compact-libras {
+    width: 50px;
+    padding: 7px 5px;
+    font-size: 11px;
+  }
 
   .hero-acoes {
     flex-direction: column;
@@ -1459,12 +1622,29 @@ MOBILE
     text-align: center;
   }
 
-  .mobile-compact-texto strong {
-    font-size: 20px;
+  body.modo-libras .indicador-libras {
+    right: 8px;
+    bottom: 8px;
+    width: 28px;
+    height: 28px;
   }
 
-  .mobile-compact-texto span {
-    font-size: 10px;
+  .libras-popup-caixa {
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 24px);
+    padding: 18px 14px 14px;
+    overflow-y: auto;
+  }
+
+  .libras-popup-caixa h2 {
+    margin-right: 38px;
+    margin-left: 38px;
+    font-size: 22px;
+  }
+
+  .libras-popup-video {
+    aspect-ratio: 9 / 16;
+    max-height: 72vh;
   }
 
   .pagina-libras {
@@ -1511,4 +1691,17 @@ MOBILE
     align-items: center;
   }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.modo-libras .conteudo-libras,
+  .libras-popup-caixa {
+    transition: none;
+    animation: none;
+  }
+
+  .libras-popup-caixa {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
