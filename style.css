@@ -494,6 +494,16 @@ PERGUNTAS FREQUENTES
   padding: 0 20px 16px;
 }
 
+/* Ícone da Libras antes do sinal de abrir/fechar da FAQ */
+
+body.modo-libras .faq .indicador-libras {
+  top: 8px;
+  right: 46px;
+  bottom: auto;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 /* =================================
 ENCERRAMENTO
 ================================= */
@@ -1510,6 +1520,12 @@ MOBILE
     padding: 0 17px 15px;
     font-size: 14px;
   }
+
+  .body.modo-libras .faq .indicador-libras {
+  top: 8px;
+  right: 46px;
+  bottom: auto;
+}
 
   .encerramento-container {
     grid-template-columns: 1fr;
