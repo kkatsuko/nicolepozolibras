@@ -932,7 +932,7 @@ body.modo-libras .indicador-libras {
   display: inline-flex;
   position: absolute;
   right: 12px;
-  bottom: 10px;
+  Top: 10px;
   z-index: 3;
   align-items: center;
   justify-content: center;
@@ -1624,7 +1624,7 @@ MOBILE
 
   body.modo-libras .indicador-libras {
     right: 8px;
-    bottom: 8px;
+    top: 8px;
     width: 28px;
     height: 28px;
   }
