@@ -29,6 +29,10 @@ body {
   line-height: 1.6;
 }
 
+/* =================================
+LAYOUT
+================================= */
+
 main {
   margin-top: 0;
 }
@@ -48,7 +52,9 @@ section {
 TIPOGRAFIA
 ================================= */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--texto);
 }
 
@@ -112,7 +118,9 @@ MENU
   padding: 15px 0;
   background-color: var(--fundo-principal);
   border-bottom: 1px solid rgba(90, 46, 46, 0.15);
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .menu-container {
@@ -129,7 +137,9 @@ MENU
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.8px;
-  transition: font-size 0.3s ease, opacity 0.3s ease;
+  transition:
+    font-size 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .menu a:hover,
@@ -193,6 +203,10 @@ HERO PRINCIPAL
   z-index: 1;
 }
 
+/* =================================
+INFOS DA HERO
+================================= */
+
 .infos span {
   white-space: nowrap;
 }
@@ -214,7 +228,9 @@ BOTÕES E LINKS
   text-decoration: none;
   border-radius: 30px;
   font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .botao:hover,
@@ -240,7 +256,12 @@ BOTÕES E LINKS
 ÂNCORAS E ALINHAMENTO DAS SEÇÕES
 ================================= */
 
-.sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
+.sobre,
+.atendimento,
+.libras,
+.como-funciona,
+.faq,
+.contato {
   scroll-margin-top: 145px;
   text-align: center;
 }
@@ -253,8 +274,13 @@ BOTÕES E LINKS
   text-align: left;
 }
 
-.sobre h2, .atendimento h2, .libras h2,
-.como-funciona h2, .faq h2, .contato h2, .chamada-final h2 {
+.sobre h2,
+.atendimento h2,
+.libras h2,
+.como-funciona h2,
+.faq h2,
+.contato h2,
+.chamada-final h2 {
   text-align: center;
 }
 
@@ -464,7 +490,7 @@ PERGUNTAS FREQUENTES
 
 .faq summary {
   position: relative;
-  padding: 15px 48px 15px 20px;
+  padding: 15px 95px 15px 20px;
   cursor: pointer;
   font-weight: 500;
   list-style: none;
@@ -492,16 +518,6 @@ PERGUNTAS FREQUENTES
 .faq details p {
   margin: 0;
   padding: 0 20px 16px;
-}
-
-/* Ícone da Libras antes do sinal de abrir/fechar da FAQ */
-
-body.modo-libras .faq .indicador-libras {
-  top: 8px;
-  right: 46px;
-  bottom: auto;
-  pointer-events: auto;
-  cursor: pointer;
 }
 
 /* =================================
@@ -607,7 +623,6 @@ Escondidas por padrão
 
 /* =================================
 ACESSO À VERSÃO EM LIBRAS
-(botão "Site em Libras" / seletor de idioma)
 ================================= */
 
 button {
@@ -621,11 +636,6 @@ button {
   align-items: center;
   justify-content: center;
   gap: 12px;
-}
-
-.hero-acoes {
-  flex-direction: column;
-  gap: 10px;
 }
 
 .hero-acoes .botao {
@@ -669,10 +679,6 @@ button {
   transform: translateY(-1px);
 }
 
-.desktop-compact-acoes {
-  gap: 10px;
-}
-
 .desktop-compact-libras {
   padding: 8px 17px;
   border-radius: 24px;
@@ -686,7 +692,6 @@ button {
 }
 
 .mobile-compact-libras {
-  width: 58px;
   padding: 7px 9px;
   border-radius: 22px;
   font-size: 11px;
@@ -904,6 +909,12 @@ MODO LIBRAS COM POP-UP DE VÍDEO
 
 .conteudo-libras {
   position: relative;
+  --distancia-icone-direita: 12px;
+}
+
+/* No FAQ, o ícone fica antes do sinal de abrir/fechar */
+.faq details.conteudo-libras {
+  --distancia-icone-direita: 54px;
 }
 
 body.modo-libras .conteudo-libras {
@@ -932,7 +943,7 @@ body.modo-libras .conteudo-libras:focus-visible {
     0 0 0 6px rgba(90, 46, 46, 0.42);
 }
 
-/* Ícone "Em Libras" no lugar do texto */
+/* Ícone "Em Libras" */
 
 .indicador-libras {
   display: none;
@@ -941,8 +952,8 @@ body.modo-libras .conteudo-libras:focus-visible {
 body.modo-libras .indicador-libras {
   display: inline-flex;
   position: absolute;
-  right: 12px;
-  Top: 10px;
+  top: 10px;
+  right: var(--distancia-icone-direita);
   z-index: 3;
   align-items: center;
   justify-content: center;
@@ -951,7 +962,8 @@ body.modo-libras .indicador-libras {
   padding: 0;
   background-color: transparent;
   border-radius: 8px;
-  pointer-events: none;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 body.modo-libras .indicador-libras img {
@@ -959,15 +971,6 @@ body.modo-libras .indicador-libras img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-body.modo-libras .hero-content,
-body.modo-libras .sobre .container,
-body.modo-libras .libras .container,
-body.modo-libras .atendimento .container,
-body.modo-libras .chamada-final,
-body.modo-libras .contato {
-  padding-bottom: 42px;
 }
 
 /* Pop-up de vídeo */
@@ -1235,7 +1238,9 @@ DESKTOP
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
   .desktop-compact-hero::after {
@@ -1434,7 +1439,12 @@ MOBILE
     font-size: 20px;
   }
 
-  .sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
+  .sobre,
+  .atendimento,
+  .libras,
+  .como-funciona,
+  .faq,
+  .contato {
     scroll-margin-top: 125px;
   }
 
@@ -1508,7 +1518,7 @@ MOBILE
   }
 
   .faq summary {
-    padding: 14px 44px 14px 17px;
+    padding: 14px 78px 14px 17px;
     font-size: 14px;
   }
 
@@ -1520,12 +1530,6 @@ MOBILE
     padding: 0 17px 15px;
     font-size: 14px;
   }
-
-  .body.modo-libras .faq .indicador-libras {
-  top: 8px;
-  right: 46px;
-  bottom: auto;
-}
 
   .encerramento-container {
     grid-template-columns: 1fr;
@@ -1578,7 +1582,9 @@ MOBILE
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
   body.scrolled .mobile-compact-hero {
@@ -1620,12 +1626,6 @@ MOBILE
     text-align: center;
   }
 
-  .mobile-compact-libras {
-    width: 50px;
-    padding: 7px 5px;
-    font-size: 11px;
-  }
-
   .hero-acoes {
     flex-direction: column;
     width: 100%;
@@ -1636,31 +1636,6 @@ MOBILE
     width: auto;
     min-width: 175px;
     text-align: center;
-  }
-
-  body.modo-libras .indicador-libras {
-    right: 8px;
-    top: 8px;
-    width: 28px;
-    height: 28px;
-  }
-
-  .libras-popup-caixa {
-    width: calc(100vw - 20px);
-    max-height: calc(100vh - 24px);
-    padding: 18px 14px 14px;
-    overflow-y: auto;
-  }
-
-  .libras-popup-caixa h2 {
-    margin-right: 38px;
-    margin-left: 38px;
-    font-size: 22px;
-  }
-
-  .libras-popup-video {
-    aspect-ratio: 9 / 16;
-    max-height: 72vh;
   }
 
   .pagina-libras {
@@ -1707,16 +1682,51 @@ MOBILE
     align-items: center;
   }
 
+  /* Ícone da Libras em telas pequenas */
+
+  .conteudo-libras {
+    --distancia-icone-direita: 8px;
+  }
+
+  .faq details.conteudo-libras {
+    --distancia-icone-direita: 42px;
+  }
+
+  body.modo-libras .indicador-libras {
+    top: 8px;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Espaço para o ícone nos títulos, evitando sobreposição */
+
+  body.modo-libras .card-atendimento h3,
+  body.modo-libras .passo h3 {
+    box-sizing: border-box;
+    padding-right: 44px;
+  }
+
+  body.modo-libras .sobre .container > h2,
+  body.modo-libras .libras-texto > h2,
+  body.modo-libras .chamada-final > h2,
+  body.modo-libras .contato > h2 {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 44px;
+  }
+
+  body.modo-libras .hero-texto h1 {
+    box-sizing: border-box;
+    padding-right: 44px;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.modo-libras .conteudo-libras,
   .libras-popup-caixa {
     transition: none;
     animation: none;
-  }
-
-  .libras-popup-caixa {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
