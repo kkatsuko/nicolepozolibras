@@ -974,8 +974,11 @@ body.modo-libras .indicador-libras img {
 
 body.modo-libras .card-atendimento h3,
 body.modo-libras .passo h3 {
+  display: block;
   box-sizing: border-box;
+  width: 100%;
   padding-right: 48px;
+  text-align: left;
 }
 
 body.modo-libras .sobre .container > h2,
@@ -1720,11 +1723,14 @@ MOBILE
 
   /* Espaço para o ícone nos títulos, evitando sobreposição */
 
-  body.modo-libras .card-atendimento h3,
-  body.modo-libras .passo h3 {
-    box-sizing: border-box;
-    padding-right: 40px;
-  }
+body.modo-libras .card-atendimento h3,
+body.modo-libras .passo h3 {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 40px;
+  text-align: left;
+}
 
   body.modo-libras .sobre .container > h2,
   body.modo-libras .libras-texto > h2,
