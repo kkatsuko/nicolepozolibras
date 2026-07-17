@@ -443,28 +443,41 @@ COMO FUNCIONA
 }
 
 .passo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   height: 100%;
   box-sizing: border-box;
-  padding: 23px 20px 19px;
+  padding: 52px 20px 19px;
   background-color: rgba(242, 230, 216, 0.65);
   border: 1px solid var(--borda);
   border-radius: 16px;
-  text-align: center;
+  text-align: left;
+}
+
+.passo h3 {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 6px;
+  padding: 0;
+  text-align: left;
 }
 
 .passo p {
-  margin-bottom: 0;
+  margin: 0;
   text-align: left;
 }
 
 .passo .passo-subtitulo {
-  margin: -4px 0 20px;
+  margin: 0 0 18px;
+  padding: 0;
+  color: var(--texto-escuro);
   font-family: 'Cardo', serif;
   font-size: 19px;
   font-weight: 400;
   line-height: 1.25;
-  text-align: center;
-  color: var(--texto-escuro);
+  text-align: left;
 }
 
 /* =================================
@@ -972,13 +985,9 @@ body.modo-libras .indicador-libras img {
 
 /* Espaço reservado nos títulos para o ícone não cobrir palavras (desktop/tablet) */
 
-body.modo-libras .card-atendimento h3,
-body.modo-libras .passo h3 {
-  display: block;
+body.modo-libras .card-atendimento h3 {
   box-sizing: border-box;
-  width: 100%;
   padding-right: 48px;
-  text-align: left;
 }
 
 body.modo-libras .sobre .container > h2,
@@ -1535,7 +1544,7 @@ MOBILE
   .passo {
     flex: 0 0 82%;
     height: auto;
-    padding: 20px 18px 18px;
+    padding: 44px 18px 18px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
@@ -1723,14 +1732,10 @@ MOBILE
 
   /* Espaço para o ícone nos títulos, evitando sobreposição */
 
-body.modo-libras .card-atendimento h3,
-body.modo-libras .passo h3 {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  padding-right: 40px;
-  text-align: left;
-}
+  body.modo-libras .card-atendimento h3 {
+    box-sizing: border-box;
+    padding-right: 40px;
+  }
 
   body.modo-libras .sobre .container > h2,
   body.modo-libras .libras-texto > h2,
