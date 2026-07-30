@@ -29,10 +29,6 @@ body {
   line-height: 1.6;
 }
 
-/* =================================
-LAYOUT
-================================= */
-
 main {
   margin-top: 0;
 }
@@ -52,9 +48,7 @@ section {
 TIPOGRAFIA
 ================================= */
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: var(--texto);
 }
 
@@ -118,9 +112,7 @@ MENU
   padding: 15px 0;
   background-color: var(--fundo-principal);
   border-bottom: 1px solid rgba(90, 46, 46, 0.15);
-  transition:
-    padding 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-container {
@@ -137,9 +129,7 @@ MENU
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.8px;
-  transition:
-    font-size 0.3s ease,
-    opacity 0.3s ease;
+  transition: font-size 0.3s ease, opacity 0.3s ease;
 }
 
 .menu a:hover,
@@ -203,10 +193,6 @@ HERO PRINCIPAL
   z-index: 1;
 }
 
-/* =================================
-INFOS DA HERO
-================================= */
-
 .infos span {
   white-space: nowrap;
 }
@@ -228,9 +214,7 @@ BOTÕES E LINKS
   text-decoration: none;
   border-radius: 30px;
   font-weight: 500;
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .botao:hover,
@@ -256,12 +240,7 @@ BOTÕES E LINKS
 ÂNCORAS E ALINHAMENTO DAS SEÇÕES
 ================================= */
 
-.sobre,
-.atendimento,
-.libras,
-.como-funciona,
-.faq,
-.contato {
+.sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
   scroll-margin-top: 145px;
   text-align: center;
 }
@@ -274,13 +253,8 @@ BOTÕES E LINKS
   text-align: left;
 }
 
-.sobre h2,
-.atendimento h2,
-.libras h2,
-.como-funciona h2,
-.faq h2,
-.contato h2,
-.chamada-final h2 {
+.sobre h2, .atendimento h2, .libras h2,
+.como-funciona h2, .faq h2, .contato h2, .chamada-final h2 {
   text-align: center;
 }
 
@@ -314,7 +288,6 @@ SOBRE MIM
 }
 
 .sobre .container {
-  position: relative;
   max-width: 760px;
 }
 
@@ -372,7 +345,6 @@ COMO POSSO AJUDAR
 }
 
 .card-atendimento {
-  position: relative;
   padding: 21px;
   background-color: rgba(242, 230, 216, 0.66);
   border: 1px solid var(--borda);
@@ -445,41 +417,28 @@ COMO FUNCIONA
 }
 
 .passo {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
   height: 100%;
   box-sizing: border-box;
-  padding: 52px 20px 19px;
+  padding: 23px 20px 19px;
   background-color: rgba(242, 230, 216, 0.65);
   border: 1px solid var(--borda);
   border-radius: 16px;
-  text-align: left;
-}
-
-.passo h3 {
-  width: 100%;
-  box-sizing: border-box;
-  margin: 0 0 6px;
-  padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
 .passo p {
-  margin: 0;
+  margin-bottom: 0;
   text-align: left;
 }
 
 .passo .passo-subtitulo {
-  margin: 0 0 18px;
-  padding: 0;
-  color: var(--texto-escuro);
+  margin: -4px 0 20px;
   font-family: 'Cardo', serif;
   font-size: 19px;
   font-weight: 400;
   line-height: 1.25;
-  text-align: left;
+  text-align: center;
+  color: var(--texto-escuro);
 }
 
 /* =================================
@@ -497,7 +456,6 @@ PERGUNTAS FREQUENTES
 }
 
 .faq details {
-  position: relative;
   overflow: hidden;
   background-color: rgba(230, 210, 181, 0.42);
   border: 1px solid var(--borda);
@@ -506,7 +464,7 @@ PERGUNTAS FREQUENTES
 
 .faq summary {
   position: relative;
-  padding: 15px 95px 15px 20px;
+  padding: 15px 48px 15px 20px;
   cursor: pointer;
   font-weight: 500;
   list-style: none;
@@ -553,7 +511,6 @@ ENCERRAMENTO
 
 .chamada-final,
 .contato {
-  position: relative;
   padding: 10px 42px;
   text-align: center;
 }
@@ -640,6 +597,7 @@ Escondidas por padrão
 
 /* =================================
 ACESSO À VERSÃO EM LIBRAS
+(botão "Site em Libras")
 ================================= */
 
 button {
@@ -655,14 +613,18 @@ button {
   gap: 12px;
 }
 
+.hero-acoes {
+  flex-direction: column;
+  gap: 10px;
+}
+
 .hero-acoes .botao {
   margin-top: 0;
 }
 
 .botao-secundario,
 .desktop-compact-libras,
-.mobile-compact-libras,
-.idioma-link {
+.mobile-compact-libras {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -688,12 +650,14 @@ button {
 .desktop-compact-libras:hover,
 .desktop-compact-libras:focus-visible,
 .mobile-compact-libras:hover,
-.mobile-compact-libras:focus-visible,
-.idioma-link:hover,
-.idioma-link:focus-visible {
+.mobile-compact-libras:focus-visible {
   color: var(--fundo-principal);
   background-color: var(--texto);
   transform: translateY(-1px);
+}
+
+.desktop-compact-acoes {
+  gap: 10px;
 }
 
 .desktop-compact-libras {
@@ -709,6 +673,7 @@ button {
 }
 
 .mobile-compact-libras {
+  width: 58px;
   padding: 7px 9px;
   border-radius: 22px;
   font-size: 11px;
@@ -716,56 +681,11 @@ button {
 }
 
 /* =================================
-PÁGINA EM LIBRAS
+PÁGINA EM LIBRAS (libras.html)
 ================================= */
 
 .pagina-libras {
   padding-top: 0;
-}
-
-.topo-idiomas {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 12px 5%;
-  background-color: var(--fundo-principal);
-  border-bottom: 1px solid var(--borda);
-  box-shadow: 0 4px 12px rgba(90, 46, 46, 0.05);
-}
-
-.topo-idiomas-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  max-width: 1080px;
-  margin: auto;
-}
-
-.marca-libras {
-  color: var(--texto);
-  font-family: 'Cardo', serif;
-  font-size: 23px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.seletor-idiomas {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.seletor-idiomas span,
-.seletor-idiomas a {
-  padding: 7px 12px;
-  border-radius: 22px;
-  font-size: 13px;
-}
-
-.seletor-idiomas span[aria-current="page"] {
-  color: var(--fundo-principal);
-  background-color: var(--texto);
 }
 
 .hero-libras {
@@ -805,32 +725,10 @@ PÁGINA EM LIBRAS
   font-size: 18px;
 }
 
-/* =================================
-HERO DA PÁGINA EM LIBRAS
-(hero padrão reaproveitado, sem topo-idiomas)
-================================= */
-
-.pagina-libras .hero {
-  padding: 40px 0;
-}
-
-.pagina-libras .hero .container {
-  max-width: 1180px;
-}
-
-.pagina-libras .hero-texto {
-  text-align: center;
-}
-
-.pagina-libras .hero-acoes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.pagina-libras .hero-acoes .botao {
-  margin-top: 0;
+.voltar-portugues {
+  display: inline-flex;
+  margin-bottom: 18px;
+  font-size: 14px;
 }
 
 .grade-videos-libras {
@@ -936,17 +834,6 @@ HERO DA PÁGINA EM LIBRAS
   margin-top: 0;
 }
 
-.instrucao-edicao {
-  max-width: 840px;
-  margin: 0 auto 22px;
-  padding: 14px 17px;
-  background-color: rgba(230, 210, 181, 0.42);
-  border: 1px dashed var(--borda);
-  border-radius: 12px;
-  text-align: left;
-  font-size: 14px;
-}
-
 /* =================================
 MODO LIBRAS COM POP-UP DE VÍDEO
 (index.html — blocos e ícone)
@@ -954,11 +841,6 @@ MODO LIBRAS COM POP-UP DE VÍDEO
 
 .conteudo-libras {
   position: relative;
-  --distancia-icone-direita: 12px;
-}
-
-.faq details .conteudo-libras {
-  --distancia-icone-direita: 54px;
 }
 
 body.modo-libras .conteudo-libras {
@@ -987,6 +869,8 @@ body.modo-libras .conteudo-libras:focus-visible {
     0 0 0 6px rgba(90, 46, 46, 0.42);
 }
 
+/* Ícone "Em Libras" no lugar do texto */
+
 .indicador-libras {
   display: none;
 }
@@ -994,8 +878,8 @@ body.modo-libras .conteudo-libras:focus-visible {
 body.modo-libras .indicador-libras {
   display: inline-flex;
   position: absolute;
-  top: 10px;
-  right: var(--distancia-icone-direita);
+  right: 12px;
+  bottom: 10px;
   z-index: 3;
   align-items: center;
   justify-content: center;
@@ -1004,8 +888,7 @@ body.modo-libras .indicador-libras {
   padding: 0;
   background-color: transparent;
   border-radius: 8px;
-  cursor: pointer;
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 body.modo-libras .indicador-libras img {
@@ -1015,26 +898,13 @@ body.modo-libras .indicador-libras img {
   object-fit: contain;
 }
 
-/* Espaço reservado nos títulos para o ícone não cobrir palavras (desktop/tablet) */
-
-body.modo-libras .card-atendimento h3 {
-  box-sizing: border-box;
-  padding-right: 48px;
-}
-
-body.modo-libras .sobre .container > h2,
-body.modo-libras .libras-texto > h2,
-body.modo-libras .chamada-final > h2,
-body.modo-libras .contato > h2 {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  padding-right: 48px;
-}
-
-body.modo-libras .hero-texto h1 {
-  box-sizing: border-box;
-  padding-right: 48px;
+body.modo-libras .hero-content,
+body.modo-libras .sobre .container,
+body.modo-libras .libras .container,
+body.modo-libras .atendimento .container,
+body.modo-libras .chamada-final,
+body.modo-libras .contato {
+  padding-bottom: 42px;
 }
 
 /* Pop-up de vídeo */
@@ -1063,11 +933,9 @@ body.modo-libras .hero-texto h1 {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(820px, calc(100vw - 32px));
-  max-height: calc(100vh - 40px);
+  width: min(720px, calc(100vw - 32px));
   box-sizing: border-box;
-  padding: 28px;
-  overflow-y: auto;
+  padding: 26px;
   background-color: var(--fundo-principal);
   border: 1px solid var(--borda);
   border-radius: 18px;
@@ -1102,7 +970,7 @@ body.popup-libras-aberto {
 .libras-popup-caixa h2 {
   display: block;
   margin: 0 42px 16px;
-  font-size: 28px;
+  font-size: 26px;
   text-align: center;
 }
 
@@ -1173,30 +1041,6 @@ body.popup-libras-aberto {
   max-width: 360px;
   font-size: 12px;
   line-height: 1.4;
-}
-
-/* =================================
-HERO COMPACTO NA PÁGINA EM LIBRAS
-================================= */
-
-.pagina-libras .desktop-compact-hero {
-  top: 39px;
-}
-
-.pagina-libras .desktop-compact-hero,
-.pagina-libras .mobile-compact-hero {
-  z-index: 2000;
-}
-
-.pagina-libras .mobile-compact-hero {
-  padding: 8px 6%;
-}
-
-.pagina-libras .mobile-compact-botao {
-  width: auto;
-  min-width: 74px;
-  padding: 7px 9px;
-  font-size: 11px;
 }
 
 /* =================================
@@ -1328,9 +1172,7 @@ DESKTOP
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   .desktop-compact-hero::after {
@@ -1529,12 +1371,7 @@ MOBILE
     font-size: 20px;
   }
 
-  .sobre,
-  .atendimento,
-  .libras,
-  .como-funciona,
-  .faq,
-  .contato {
+  .sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
     scroll-margin-top: 125px;
   }
 
@@ -1602,13 +1439,13 @@ MOBILE
   .passo {
     flex: 0 0 82%;
     height: auto;
-    padding: 44px 18px 18px;
+    padding: 20px 18px 18px;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
   .faq summary {
-    padding: 14px 78px 14px 17px;
+    padding: 14px 44px 14px 17px;
     font-size: 14px;
   }
 
@@ -1672,9 +1509,7 @@ MOBILE
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition:
-      opacity 0.25s ease,
-      transform 0.25s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   body.scrolled .mobile-compact-hero {
@@ -1716,6 +1551,12 @@ MOBILE
     text-align: center;
   }
 
+  .mobile-compact-libras {
+    width: 50px;
+    padding: 7px 5px;
+    font-size: 11px;
+  }
+
   .hero-acoes {
     flex-direction: column;
     width: 100%;
@@ -1728,22 +1569,33 @@ MOBILE
     text-align: center;
   }
 
+  body.modo-libras .indicador-libras {
+    right: 8px;
+    bottom: 8px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .libras-popup-caixa {
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 24px);
+    padding: 18px 14px 14px;
+    overflow-y: auto;
+  }
+
+  .libras-popup-caixa h2 {
+    margin-right: 38px;
+    margin-left: 38px;
+    font-size: 22px;
+  }
+
+  .libras-popup-video {
+    aspect-ratio: 9 / 16;
+    max-height: 72vh;
+  }
+
   .pagina-libras {
     padding-top: 0;
-  }
-
-  .topo-idiomas {
-    padding: 10px 4%;
-  }
-
-  .marca-libras {
-    font-size: 19px;
-  }
-
-  .seletor-idiomas span,
-  .seletor-idiomas a {
-    padding: 6px 9px;
-    font-size: 11px;
   }
 
   .hero-libras {
@@ -1772,92 +1624,16 @@ MOBILE
     align-items: center;
   }
 
-  /* Ícone da Libras em telas pequenas */
-
-  .conteudo-libras {
-    --distancia-icone-direita: 8px;
-  }
-
-  .faq details .conteudo-libras {
-    --distancia-icone-direita: 42px;
-  }
-
-  body.modo-libras .indicador-libras {
-    top: 8px;
-    width: 28px;
-    height: 28px;
-  }
-
-  /* Espaço para o ícone nos títulos, evitando sobreposição */
-
-  body.modo-libras .card-atendimento h3 {
-    box-sizing: border-box;
-    padding-right: 40px;
-  }
-
-  body.modo-libras .sobre .container > h2,
-  body.modo-libras .libras-texto > h2,
-  body.modo-libras .chamada-final > h2,
-  body.modo-libras .contato > h2 {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding-right: 40px;
-  }
-
-  body.modo-libras .hero-texto h1 {
-    box-sizing: border-box;
-    padding-right: 40px;
-  }
-
-  /* Pop-up de vídeo maior, adaptado para telas pequenas */
-
-  .libras-popup-caixa {
-    width: calc(100vw - 20px);
-    max-height: calc(100vh - 24px);
-    padding: 20px 16px 16px;
-  }
-
-  .libras-popup-caixa h2 {
-    margin: 0 36px 12px;
-    font-size: 22px;
-  }
-
-  /* Hero da página em Libras no mobile */
-
-  .pagina-libras .hero {
-    padding: 24px 0 20px;
-  }
-
-  .pagina-libras .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .pagina-libras .hero-texto {
-    text-align: center;
-  }
-
-  .pagina-libras .hero-acoes {
-    flex-direction: column;
-    width: 100%;
-    gap: 8px;
-  }
-
-  .pagina-libras .hero-acoes .botao {
-    width: auto;
-    min-width: 175px;
-    text-align: center;
-  }
-
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body.modo-libras .conteudo-libras,
   .libras-popup-caixa {
     transition: none;
     animation: none;
+  }
+
+  .libras-popup-caixa {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
