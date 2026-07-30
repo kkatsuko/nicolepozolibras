@@ -1031,9 +1031,11 @@ body.modo-libras .hero-texto h1 {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(560px, calc(100vw - 32px));
+  width: min(820px, calc(100vw - 32px));
+  max-height: calc(100vh - 40px);
   box-sizing: border-box;
-  padding: 22px;
+  padding: 28px;
+  overflow-y: auto;
   background-color: var(--fundo-principal);
   border: 1px solid var(--borda);
   border-radius: 18px;
@@ -1068,7 +1070,7 @@ body.popup-libras-aberto {
 .libras-popup-caixa h2 {
   display: block;
   margin: 0 42px 16px;
-  font-size: 26px;
+  font-size: 28px;
   text-align: center;
 }
 
@@ -1750,6 +1752,19 @@ MOBILE
   body.modo-libras .hero-texto h1 {
     box-sizing: border-box;
     padding-right: 40px;
+  }
+
+  /* Pop-up de vídeo maior, adaptado para telas pequenas */
+
+  .libras-popup-caixa {
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 24px);
+    padding: 20px 16px 16px;
+  }
+
+  .libras-popup-caixa h2 {
+    margin: 0 36px 12px;
+    font-size: 22px;
   }
 
 }
