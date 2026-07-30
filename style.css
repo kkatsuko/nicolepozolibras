@@ -314,6 +314,7 @@ SOBRE MIM
 }
 
 .sobre .container {
+  position: relative;
   max-width: 760px;
 }
 
@@ -371,6 +372,7 @@ COMO POSSO AJUDAR
 }
 
 .card-atendimento {
+  position: relative;
   padding: 21px;
   background-color: rgba(242, 230, 216, 0.66);
   border: 1px solid var(--borda);
@@ -495,6 +497,7 @@ PERGUNTAS FREQUENTES
 }
 
 .faq details {
+  position: relative;
   overflow: hidden;
   background-color: rgba(230, 210, 181, 0.42);
   border: 1px solid var(--borda);
@@ -550,6 +553,7 @@ ENCERRAMENTO
 
 .chamada-final,
 .contato {
+  position: relative;
   padding: 10px 42px;
   text-align: center;
 }
@@ -953,7 +957,7 @@ MODO LIBRAS COM POP-UP DE VÍDEO
   --distancia-icone-direita: 12px;
 }
 
-.faq details.conteudo-libras {
+.faq details .conteudo-libras {
   --distancia-icone-direita: 54px;
 }
 
@@ -1175,18 +1179,15 @@ body.popup-libras-aberto {
 HERO COMPACTO NA PÁGINA EM LIBRAS
 ================================= */
 
-/* Sem a faixa superior, o hero compacto começa no topo */
 .pagina-libras .desktop-compact-hero {
   top: 39px;
 }
 
-/* O hero compacto fica sobre a página somente após o scroll */
 .pagina-libras .desktop-compact-hero,
 .pagina-libras .mobile-compact-hero {
   z-index: 2000;
 }
 
-/* Hero compacto mobile da página em Libras, sem menu acima */
 .pagina-libras .mobile-compact-hero {
   padding: 8px 6%;
 }
@@ -1777,7 +1778,7 @@ MOBILE
     --distancia-icone-direita: 8px;
   }
 
-  .faq details.conteudo-libras {
+  .faq details .conteudo-libras {
     --distancia-icone-direita: 42px;
   }
 
