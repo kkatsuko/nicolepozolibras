@@ -417,6 +417,1027 @@ LIBRAS
   text-align: left;
 }
 
+.libras .botao {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0;
+}
+
+/* =================================
+COMO FUNCIONA
+================================= */
+
+.como-funciona {
+  background-color: var(--fundo-destaque);
+}
+
+.como-funciona .container {
+  max-width: 1000px;
+}
+
+.passos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+}
+
+.passo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 52px 20px 19px;
+  background-color: rgba(242, 230, 216, 0.65);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  text-align: left;
+}
+
+.passo h3 {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 6px;
+  padding: 0;
+  text-align: left;
+}
+
+.passo p {
+  margin: 0;
+  text-align: left;
+}
+
+.passo .passo-subtitulo {
+  margin: 0 0 18px;
+  padding: 0;
+  color: var(--texto-escuro);
+  font-family: 'Cardo', serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: left;
+}
+
+/* =================================
+PERGUNTAS FREQUENTES
+================================= */
+
+.faq .container {
+  max-width: 760px;
+}
+
+.faq-lista {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.faq details {
+  overflow: hidden;
+  background-color: rgba(230, 210, 181, 0.42);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+}
+
+.faq summary {
+  position: relative;
+  padding: 15px 95px 15px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  font-family: 'Cardo', serif;
+  font-size: 25px;
+  font-weight: 500;
+  transform: translateY(-50%);
+}
+
+.faq details[open] summary::after {
+  content: "−";
+}
+
+.faq details p {
+  margin: 0;
+  padding: 0 20px 16px;
+}
+
+/* =================================
+ENCERRAMENTO
+================================= */
+
+.encerramento {
+  background-color: var(--fundo-destaque);
+}
+
+.encerramento-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  padding: 0;
+}
+
+.chamada-final,
+.contato {
+  padding: 10px 42px;
+  text-align: center;
+}
+
+.contato {
+  border-left: 1px solid var(--borda);
+}
+
+.chamada-final p,
+.contato p {
+  text-align: center;
+}
+
+.chamada-final .botao {
+  margin-top: 18px;
+}
+
+.contato .botao {
+  margin-top: 4px;
+}
+
+/* =================================
+BARRA DE CONTATOS COMPLEMENTARES
+================================= */
+
+.barra-contato {
+  padding: 0;
+  background-color: var(--fundo-principal);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+}
+
+.barra-contato-container {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 14px 0;
+}
+
+.barra-contato a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  color: var(--texto);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.barra-contato span {
+  flex-shrink: 0;
+  font-family: 'Cardo', serif;
+  font-size: 18px;
+  color: var(--texto-escuro);
+}
+
+/* =================================
+FOOTER
+================================= */
+
+footer {
+  padding: 12px 20px;
+  background-color: var(--fundo-destaque);
+  border-top: 1px solid var(--borda);
+  font-size: 14px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* =================================
+BARRAS COMPACTAS
+Escondidas por padrão
+================================= */
+
+.mobile-compact-hero,
+.desktop-compact-hero {
+  display: none !important;
+}
+
+/* =================================
+ACESSO À VERSÃO EM LIBRAS
+================================= */
+
+button {
+  font: inherit;
+}
+
+.hero-acoes,
+.desktop-compact-acoes,
+.mobile-compact-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-acoes .botao {
+  margin-top: 0;
+}
+
+.botao-secundario,
+.desktop-compact-libras,
+.mobile-compact-libras,
+.idioma-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--texto);
+  background-color: transparent;
+  border: 1px solid var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.botao-secundario {
+  padding: 11px 25px;
+  border-radius: 30px;
+}
+
+.botao-secundario:hover,
+.botao-secundario:focus-visible,
+.desktop-compact-libras:hover,
+.desktop-compact-libras:focus-visible,
+.mobile-compact-libras:hover,
+.mobile-compact-libras:focus-visible,
+.idioma-link:hover,
+.idioma-link:focus-visible {
+  color: var(--fundo-principal);
+  background-color: var(--texto);
+  transform: translateY(-1px);
+}
+
+.desktop-compact-libras {
+  padding: 8px 17px;
+  border-radius: 24px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.mobile-compact-acoes {
+  flex-shrink: 0;
+  gap: 7px;
+}
+
+.mobile-compact-libras {
+  padding: 7px 9px;
+  border-radius: 22px;
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+/* =================================
+PÁGINA EM LIBRAS
+================================= */
+
+.pagina-libras {
+  padding-top: 0;
+}
+
+.topo-idiomas {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 5%;
+  background-color: var(--fundo-principal);
+  border-bottom: 1px solid var(--borda);
+  box-shadow: 0 4px 12px rgba(90, 46, 46, 0.05);
+}
+
+.topo-idiomas-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.marca-libras {
+  color: var(--texto);
+  font-family: 'Cardo', serif;
+  font-size: 23px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.seletor-idiomas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seletor-idiomas span,
+.seletor-idiomas a {
+  padding: 7px 12px;
+  border-radius: 22px;
+  font-size: 13px;
+}
+
+.seletor-idiomas span[aria-current="page"] {
+  color: var(--fundo-principal);
+  background-color: var(--texto);
+}
+
+.hero-libras {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 0 34px;
+  background-color: var(--fundo-destaque);
+}
+
+.hero-libras::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 360px;
+  height: 360px;
+  background-image: url("cantoneira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero-libras .container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.hero-libras h1 {
+  margin: 0 0 8px;
+}
+
+.hero-libras p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* =================================
+HERO DA PÁGINA EM LIBRAS
+(hero padrão reaproveitado, sem topo-idiomas)
+================================= */
+
+.pagina-libras .hero {
+  padding: 40px 0;
+}
+
+.pagina-libras .hero .container {
+  max-width: 1180px;
+}
+
+.pagina-libras .hero-texto {
+  text-align: center;
+}
+
+.pagina-libras .hero-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pagina-libras .hero-acoes .botao {
+  margin-top: 0;
+}
+
+.grade-videos-libras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.card-video-libras {
+  overflow: hidden;
+  background-color: rgba(230, 210, 181, 0.42);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  box-shadow: var(--sombra);
+  text-align: left;
+}
+
+.card-video-conteudo {
+  padding: 19px 20px 20px;
+}
+
+.card-video-libras h2 {
+  display: block;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.card-video-libras h2::after {
+  margin-left: 0;
+}
+
+.card-video-libras .descricao-video {
+  margin-bottom: 15px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--texto);
+}
+
+.video-container iframe,
+.video-container video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px;
+  color: var(--fundo-principal);
+  text-align: center;
+}
+
+.video-placeholder strong {
+  font-family: 'Cardo', serif;
+  font-size: 25px;
+}
+
+.video-placeholder span {
+  max-width: 360px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.transcricao-video {
+  margin-top: 14px;
+  border-top: 1px solid var(--borda);
+}
+
+.transcricao-video summary {
+  padding: 13px 0 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.transcricao-video p {
+  margin: 8px 0 0;
+}
+
+.acoes-libras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.acoes-libras .botao {
+  margin-top: 0;
+}
+
+.instrucao-edicao {
+  max-width: 840px;
+  margin: 0 auto 22px;
+  padding: 14px 17px;
+  background-color: rgba(230, 210, 181, 0.42);
+  border: 1px dashed var(--borda);
+  border-radius: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* =================================
+MODO LIBRAS COM POP-UP DE VÍDEO
+(index.html — blocos e ícone)
+================================= */
+
+.conteudo-libras {
+  position: relative;
+  --distancia-icone-direita: 12px;
+}
+
+.faq details.conteudo-libras {
+  --distancia-icone-direita: 54px;
+}
+
+body.modo-libras .conteudo-libras {
+  cursor: pointer;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+body.modo-libras .card-atendimento,
+body.modo-libras .passo,
+body.modo-libras .faq details,
+body.modo-libras .hero-content,
+body.modo-libras .sobre .container,
+body.modo-libras .libras .container,
+body.modo-libras .atendimento .container,
+body.modo-libras .chamada-final,
+body.modo-libras .contato {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+body.modo-libras .conteudo-libras:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(242, 230, 216, 0.95),
+    0 0 0 6px rgba(90, 46, 46, 0.42);
+}
+
+.indicador-libras {
+  display: none;
+}
+
+body.modo-libras .indicador-libras {
+  display: inline-flex;
+  position: absolute;
+  top: 10px;
+  right: var(--distancia-icone-direita);
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+body.modo-libras .indicador-libras img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Espaço reservado nos títulos para o ícone não cobrir palavras (desktop/tablet) */
+
+body.modo-libras .card-atendimento h3 {
+  box-sizing: border-box;
+  padding-right: 48px;
+}
+
+body.modo-libras .sobre .container > h2,
+body.modo-libras .libras-texto > h2,
+body.modo-libras .chamada-final > h2,
+body.modo-libras .contato > h2 {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 48px;
+}
+
+body.modo-libras .hero-texto h1 {
+  box-sizing: border-box;
+  padding-right: 48px;
+}
+
+/* Pop-up de vídeo */
+
+.libras-popup[hidden] {
+  display: none;
+}
+
+.libras-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  pointer-events: none;
+}
+
+.libras-popup-fundo {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(40, 20, 20, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.libras-popup-caixa {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(820px, calc(100vw - 32px));
+  max-height: calc(100vh - 40px);
+  box-sizing: border-box;
+  padding: 28px;
+  overflow-y: auto;
+  background-color: var(--fundo-principal);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  box-shadow: 0 18px 55px rgba(62, 31, 31, 0.28);
+  opacity: 0;
+  transform: translate(-50%, -48%) scale(0.98);
+  pointer-events: auto;
+  animation: abrir-popup-libras 0.2s ease forwards;
+}
+
+.libras-popup.popup-fixo {
+  pointer-events: auto;
+}
+
+.libras-popup.popup-fixo .libras-popup-fundo {
+  background-color: rgba(40, 20, 20, 0.48);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.popup-libras-aberto {
+  overflow: hidden;
+}
+
+@keyframes abrir-popup-libras {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.libras-popup-caixa h2 {
+  display: block;
+  margin: 0 42px 16px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.libras-popup-fechar {
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--texto);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.libras-popup-fechar:hover,
+.libras-popup-fechar:focus-visible {
+  background-color: rgba(90, 46, 46, 0.1);
+}
+
+.libras-popup-video {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  place-items: center;
+  background-color: var(--fundo-destaque);
+  border-radius: 14px;
+}
+
+.libras-popup-video iframe,
+.libras-popup-video video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+.libras-video-vazio {
+  display: grid;
+  gap: 5px;
+  padding: 24px;
+  place-items: center;
+  text-align: center;
+}
+
+.libras-video-vazio span {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  background-color: var(--texto);
+  color: var(--fundo-principal);
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.libras-video-vazio strong {
+  font-family: 'Cardo', serif;
+  font-size: 24px;
+}
+
+.libras-video-vazio small {
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =================================
+HERO COMPACTO NA PÁGINA EM LIBRAS
+================================= */
+
+/* Sem a faixa superior, o hero compacto começa no topo */
+.pagina-libras .desktop-compact-hero {
+  top: 39px;
+}
+
+/* O hero compacto fica sobre a página somente após o scroll */
+.pagina-libras .desktop-compact-hero,
+.pagina-libras .mobile-compact-hero {
+  z-index: 2000;
+}
+
+/* Hero compacto mobile da página em Libras, sem menu acima */
+.pagina-libras .mobile-compact-hero {
+  padding: 8px 6%;
+}
+
+.pagina-libras .mobile-compact-botao {
+  width: auto;
+  min-width: 74px;
+  padding: 7px 9px;
+  font-size: 11px;
+}
+
+/* =================================
+DESKTOP
+================================= */
+
+@media (min-width: 901px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 23px;
+  }
+
+  .menu a {
+    font-size: 15px;
+  }
+
+  body.scrolled .menu a {
+    font-size: 14px;
+  }
+
+  .acolhimento p,
+  .citacao {
+    font-size: 27px;
+  }
+
+  .passo .passo-subtitulo {
+    font-size: 21px;
+  }
+
+  .faq summary::after {
+    font-size: 27px;
+  }
+
+  .barra-contato a,
+  footer {
+    font-size: 16px;
+  }
+
+  .barra-contato span {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .acolhimento-container,
+  .sobre .container,
+  .libras-container,
+  .faq .container {
+    max-width: 840px;
+  }
+
+  .atendimento .container,
+  .como-funciona .container,
+  .encerramento-container {
+    max-width: 1080px;
+  }
+
+  .barra-contato-container {
+    max-width: 980px;
+  }
+
+  .hero {
+    padding: 20px 0;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 32px;
+    max-width: 1180px;
+    text-align: left;
+  }
+
+  .hero-texto {
+    text-align: left;
+  }
+
+  .hero h1 {
+    margin: 0 0 6px;
+    font-size: 46px;
+  }
+
+  .subtitulo {
+    margin: 0 0 10px;
+    font-size: 23px;
+  }
+
+  .infos {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .hero-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-acoes .botao {
+    min-width: 160px;
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .desktop-compact-hero {
+    display: block !important;
+    position: fixed;
+    top: 39px;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 8px 5%;
+    background-color: var(--fundo-destaque);
+    color: var(--texto);
+    box-shadow: var(--sombra);
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .desktop-compact-hero::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -20px;
+    z-index: 0;
+    width: 260px;
+    height: 260px;
+    background-image: url("cantoneira.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.10;
+    pointer-events: none;
+  }
+
+  body.scrolled .desktop-compact-hero {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .desktop-compact-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 22px;
+    max-width: 1180px;
+    margin: auto;
+    text-align: left;
+  }
+
+  .desktop-compact-foto {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 4px solid var(--texto);
+    border-radius: 50%;
+  }
+
+  .desktop-compact-texto strong {
+    display: block;
+    font-family: 'Cardo', serif;
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .desktop-compact-texto span {
+    display: block;
+    margin-top: 3px;
+    font-size: 16px;
+  }
+
+  .desktop-compact-acoes {
+    justify-content: flex-end;
+  }
+
+  .desktop-compact-botao {
+    display: inline-block;
+    padding: 9px 22px;
+    background-color: var(--texto);
+    color: var(--fundo-principal);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .desktop-compact-botao:hover,
+  .desktop-compact-botao:focus-visible {
+    background-color: var(--texto-escuro);
+  }
+
+}
+
+/* =================================
+TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+  .menu-container {
+    gap: 26px;
+  }
+
+  .cards-atendimento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chamada-final,
+  .contato {
+    padding: 8px 28px;
+  }
+
+  .barra-contato-container {
+    gap: 22px;
+  }
+
+}
+
+/* =================================
+MOBILE
+================================= */
+
 @media (max-width: 600px) {
 
   body {
@@ -839,15 +1860,4 @@ LIBRAS
     opacity: 1;
     transform: translate(-50%, -50%);
   }
-}
-
-/* =================================
-HERO COMPACTO — PÁGINA EM LIBRAS
-Remove o espaço acima da barra, já
-que essa página não tem o menu fixo
-================================= */
-
-.pagina-libras .desktop-compact-hero,
-.pagina-libras .mobile-compact-hero {
-  top: 0;
 }
