@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   padding-top: 60px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--fundo-principal);
   color: var(--texto);
   text-align: center;
@@ -48,13 +48,15 @@ section {
 TIPOGRAFIA
 ================================= */
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: var(--texto);
 }
 
 h1 {
   margin: 20px 0 10px;
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 48px;
 }
 
@@ -62,7 +64,7 @@ h2 {
   position: relative;
   display: inline-block;
   margin: 0 0 18px;
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 32px;
   line-height: 1.2;
 }
@@ -79,7 +81,7 @@ h2::after {
 
 h3 {
   margin: 0 0 10px;
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 21px;
   line-height: 1.25;
 }
@@ -184,7 +186,7 @@ HERO PRINCIPAL
   background-image: url("cantoneira.png");
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.10;
+  opacity: 0.1;
   pointer-events: none;
 }
 
@@ -205,6 +207,10 @@ HERO PRINCIPAL
 BOTÕES E LINKS
 ================================= */
 
+button {
+  font: inherit;
+}
+
 .botao {
   display: inline-block;
   margin-top: 25px;
@@ -223,6 +229,57 @@ BOTÕES E LINKS
   transform: translateY(-1px);
 }
 
+.botao-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 11px 25px;
+  color: var(--texto);
+  background-color: transparent;
+  border: 1px solid var(--texto);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.botao-secundario:hover,
+.botao-secundario:focus-visible {
+  color: var(--fundo-principal);
+  background-color: var(--texto);
+  transform: translateY(-1px);
+}
+
+.voltar-portugues {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 10px 22px;
+  color: var(--texto);
+  background-color: transparent;
+  border: 1px solid var(--texto);
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.voltar-portugues:hover,
+.voltar-portugues:focus-visible {
+  color: var(--fundo-principal);
+  background-color: var(--texto);
+  transform: translateY(-1px);
+}
+
 .barra-contato a {
   color: var(--texto);
   font-weight: 500;
@@ -236,11 +293,34 @@ BOTÕES E LINKS
   color: var(--texto-escuro);
 }
 
+.hero-acoes,
+.desktop-compact-acoes,
+.mobile-compact-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero-acoes {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-acoes .botao {
+  margin-top: 0;
+}
+
 /* =================================
-ÂNCORAS E ALINHAMENTO DAS SEÇÕES
+ÂNCORAS E ALINHAMENTO
 ================================= */
 
-.sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
+.sobre,
+.atendimento,
+.libras,
+.como-funciona,
+.faq,
+.contato {
   scroll-margin-top: 145px;
   text-align: center;
 }
@@ -253,8 +333,13 @@ BOTÕES E LINKS
   text-align: left;
 }
 
-.sobre h2, .atendimento h2, .libras h2,
-.como-funciona h2, .faq h2, .contato h2, .chamada-final h2 {
+.sobre h2,
+.atendimento h2,
+.libras h2,
+.como-funciona h2,
+.faq h2,
+.contato h2,
+.chamada-final h2 {
   text-align: center;
 }
 
@@ -272,7 +357,7 @@ ACOLHIMENTO
 
 .acolhimento p {
   margin: 0;
-  font-family: 'Cormorant Infant', serif;
+  font-family: "Cormorant Infant", serif;
   font-size: 25px;
   font-weight: 500;
   line-height: 1.15;
@@ -304,7 +389,7 @@ CITAÇÃO
   max-width: 600px;
   margin: 28px auto 0;
   color: var(--texto);
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 25px;
   font-style: italic;
   line-height: 1.3;
@@ -349,8 +434,8 @@ COMO POSSO AJUDAR
   background-color: rgba(242, 230, 216, 0.66);
   border: 1px solid var(--borda);
   border-radius: 16px;
-  box-shadow: 0 3px 12px rgba(90, 46, 46, 0.04);
   text-align: left;
+  box-shadow: 0 3px 12px rgba(90, 46, 46, 0.04);
 }
 
 .card-atendimento p {
@@ -362,9 +447,9 @@ LIBRAS
 ================================= */
 
 .libras {
-  background-color: var(--fundo-destaque);
   position: relative;
   overflow: hidden;
+  background-color: var(--fundo-destaque);
 }
 
 .libras::after {
@@ -417,8 +502,8 @@ COMO FUNCIONA
 }
 
 .passo {
-  height: 100%;
   box-sizing: border-box;
+  height: 100%;
   padding: 23px 20px 19px;
   background-color: rgba(242, 230, 216, 0.65);
   border: 1px solid var(--borda);
@@ -433,12 +518,12 @@ COMO FUNCIONA
 
 .passo .passo-subtitulo {
   margin: -4px 0 20px;
-  font-family: 'Cardo', serif;
+  color: var(--texto-escuro);
+  font-family: "Cardo", serif;
   font-size: 19px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
-  color: var(--texto-escuro);
 }
 
 /* =================================
@@ -479,7 +564,7 @@ PERGUNTAS FREQUENTES
   position: absolute;
   top: 50%;
   right: 20px;
-  font-family: 'Cardo', serif;
+  font-family: "Cardo", serif;
   font-size: 25px;
   font-weight: 500;
   transform: translateY(-50%);
@@ -565,9 +650,9 @@ BARRA DE CONTATOS COMPLEMENTARES
 
 .barra-contato span {
   flex-shrink: 0;
-  font-family: 'Cardo', serif;
-  font-size: 18px;
   color: var(--texto-escuro);
+  font-family: "Cardo", serif;
+  font-size: 18px;
 }
 
 /* =================================
@@ -587,7 +672,6 @@ footer p {
 
 /* =================================
 BARRAS COMPACTAS
-Escondidas por padrão
 ================================= */
 
 .mobile-compact-hero,
@@ -595,36 +679,17 @@ Escondidas por padrão
   display: none !important;
 }
 
-/* =================================
-ACESSO À VERSÃO EM LIBRAS
-(botão "Site em Libras" / seletor de idioma)
-================================= */
-
-button {
-  font: inherit;
-}
-
-.hero-acoes,
-.desktop-compact-acoes,
-.mobile-compact-acoes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.hero-acoes {
-  flex-direction: column;
+.desktop-compact-acoes {
   gap: 10px;
 }
 
-.hero-acoes .botao {
-  margin-top: 0;
+.mobile-compact-acoes {
+  flex-shrink: 0;
+  gap: 7px;
 }
 
-.botao-secundario,
-.desktop-compact-libras,
-.mobile-compact-libras {
+.mobile-compact-libras,
+.desktop-compact-libras {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -640,36 +705,11 @@ button {
     transform 0.2s ease;
 }
 
-.botao-secundario {
-  padding: 11px 25px;
-  border-radius: 30px;
-}
-
-.botao-secundario:hover,
-.botao-secundario:focus-visible,
-.desktop-compact-libras:hover,
-.desktop-compact-libras:focus-visible,
-.mobile-compact-libras:hover,
-.mobile-compact-libras:focus-visible {
-  color: var(--fundo-principal);
-  background-color: var(--texto);
-  transform: translateY(-1px);
-}
-
-.desktop-compact-acoes {
-  gap: 10px;
-}
-
 .desktop-compact-libras {
   padding: 8px 17px;
   border-radius: 24px;
   font-size: 15px;
   white-space: nowrap;
-}
-
-.mobile-compact-acoes {
-  flex-shrink: 0;
-  gap: 7px;
 }
 
 .mobile-compact-libras {
@@ -680,8 +720,17 @@ button {
   line-height: 1.1;
 }
 
+.desktop-compact-libras:hover,
+.desktop-compact-libras:focus-visible,
+.mobile-compact-libras:hover,
+.mobile-compact-libras:focus-visible {
+  color: var(--fundo-principal);
+  background-color: var(--texto);
+  transform: translateY(-1px);
+}
+
 /* =================================
-PÁGINA EM LIBRAS (libras.html)
+PÁGINA EM LIBRAS
 ================================= */
 
 .pagina-libras {
@@ -771,210 +820,271 @@ PÁGINA EM LIBRAS (libras.html)
 .video-container iframe,
 .video-container video {
   display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: 0;
+  object-fit: cover;
 }
 
-.libras-video-vazio {
+.video-placeholder {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: 100%;
-  height: 100%;
+  gap: 5px;
+  padding: 20px;
   color: var(--fundo-principal);
   text-align: center;
 }
 
-.libras-video-vazio span {
-  font-size: 30px;
-  line-height: 1;
+.video-placeholder strong {
+  font-family: "Cardo", serif;
+  font-size: 25px;
 }
 
-.libras-video-vazio strong {
-  font-size: 18px;
-}
-
-.libras-video-vazio small {
-  max-width: 200px;
-  font-size: 11px;
-  line-height: 1.3;
-  opacity: 0.7;
+.video-placeholder span {
+  max-width: 360px;
+  font-size: 13px;
+  opacity: 0.85;
 }
 
 .transcricao-video {
-  margin-top: 10px;
-}
-
-.transcricao-video details {
-  overflow: hidden;
-  background-color: rgba(242, 230, 216, 0.66);
-  border: 1px solid var(--borda);
-  border-radius: 12px;
+  margin-top: 14px;
+  border-top: 1px solid var(--borda);
 }
 
 .transcricao-video summary {
-  position: relative;
-  padding: 12px 40px 12px 18px;
+  padding: 13px 0 5px;
   cursor: pointer;
   font-weight: 500;
-  list-style: none;
 }
 
-.transcricao-video summary::-webkit-details-marker {
-  display: none;
-}
-
-.transcricao-video summary::after {
-  content: "+";
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  font-family: 'Cardo', serif;
-  font-size: 22px;
-  font-weight: 500;
-  transform: translateY(-50%);
-}
-
-.transcricao-video details[open] summary::after {
-  content: "−";
-}
-
-.transcricao-video details p {
-  margin: 0;
-  padding: 0 18px 14px;
+.transcricao-video p {
+  margin: 8px 0 0;
 }
 
 .acoes-libras {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .acoes-libras .botao {
   margin-top: 0;
-  padding: 10px 22px;
-  font-size: 15px;
 }
 
 /* =================================
-POPUP LIBRAS
+MODO LIBRAS COM POP-UP
 ================================= */
 
-.libras-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.libras-popup[hidden] {
-  display: flex; /* Override default hidden behavior for transition */
-}
-
-.libras-popup:not([hidden]) {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.libras-popup-caixa {
+.conteudo-libras {
   position: relative;
-  width: min(720px, calc(100vw - 40px)); /* Aumentado para 720px */
-  max-height: calc(100vh - 40px);
-  padding: 22px 20px 20px;
-  background-color: var(--fundo-principal);
+}
+
+body.modo-libras .conteudo-libras {
+  cursor: pointer;
+  overflow: hidden;
   border-radius: 18px;
-  box-shadow: var(--sombra);
-  text-align: center;
-  transform: scale(0.95);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.libras-popup:not([hidden]) .libras-popup-caixa {
-  transform: scale(1);
-  opacity: 1;
+body.modo-libras .card-atendimento,
+body.modo-libras .passo,
+body.modo-libras .faq details,
+body.modo-libras .hero-content,
+body.modo-libras .sobre .container,
+body.modo-libras .libras .container,
+body.modo-libras .atendimento .container,
+body.modo-libras .chamada-final,
+body.modo-libras .contato {
+  overflow: hidden;
+  border-radius: 18px;
 }
 
-.libras-popup-caixa h2 {
-  margin-bottom: 12px;
-  font-size: 26px;
+body.modo-libras .conteudo-libras:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(242, 230, 216, 0.95),
+    0 0 0 6px rgba(90, 46, 46, 0.42);
 }
 
-.libras-popup-caixa h2::after {
+.indicador-libras {
   display: none;
 }
 
-.libras-popup-video {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background-color: var(--texto);
-  border-radius: 12px;
-}
-
-.libras-popup-video iframe,
-.libras-popup-video video {
-  display: block;
+body.modo-libras .indicador-libras {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.libras-popup-fechar {
-  position: absolute;
-  top: 12px;
   right: 12px;
-  display: flex;
+  bottom: 10px;
+  z-index: 3;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 34px;
   height: 34px;
-  background-color: var(--texto);
-  color: var(--fundo-principal);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-  transition: background-color 0.2s ease;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 8px;
+  pointer-events: none;
 }
 
-.libras-popup-fechar:hover,
-.libras-popup-fechar:focus-visible {
-  background-color: var(--texto-escuro);
+body.modo-libras .indicador-libras img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body.modo-libras .hero-content,
+body.modo-libras .sobre .container,
+body.modo-libras .libras .container,
+body.modo-libras .atendimento .container,
+body.modo-libras .chamada-final,
+body.modo-libras .contato {
+  padding-bottom: 42px;
+}
+
+/* =================================
+POP-UP DE VÍDEO
+================================= */
+
+.libras-popup[hidden] {
+  display: none;
+}
+
+.libras-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  pointer-events: none;
+}
+
+.libras-popup-fundo {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(40, 20, 20, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.libras-popup.popup-fixo {
+  pointer-events: auto;
+}
+
+.libras-popup.popup-fixo .libras-popup-fundo {
+  background-color: rgba(40, 20, 20, 0.48);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 body.popup-libras-aberto {
   overflow: hidden;
 }
 
-/* =================================
-ICONES
-================================= */
+.libras-popup-caixa {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(720px, calc(100vw - 32px));
+  box-sizing: border-box;
+  padding: 26px;
+  background-color: var(--fundo-principal);
+  border: 1px solid var(--borda);
+  border-radius: 18px;
+  box-shadow: 0 18px 55px rgba(62, 31, 31, 0.28);
+  opacity: 0;
+  transform: translate(-50%, -48%) scale(0.98);
+  pointer-events: auto;
+  animation: abrir-popup-libras 0.2s ease forwards;
+}
 
-.icone-botao {
-  margin-right: 6px;
-  vertical-align: -2px;
+@keyframes abrir-popup-libras {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.libras-popup-caixa h2 {
+  display: block;
+  margin: 0 42px 16px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.libras-popup-fechar {
+  position: absolute;
+  top: 9px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--texto);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.libras-popup-fechar:hover,
+.libras-popup-fechar:focus-visible {
+  background-color: rgba(90, 46, 46, 0.1);
+}
+
+.libras-popup-video {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  place-items: center;
+  background-color: var(--fundo-destaque);
+  border-radius: 14px;
+}
+
+.libras-popup-video iframe,
+.libras-popup-video video {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: contain;
+}
+
+.libras-video-vazio {
+  display: grid;
+  gap: 5px;
+  padding: 24px;
+  place-items: center;
+  text-align: center;
+}
+
+.libras-video-vazio span {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  background-color: var(--texto);
+  color: var(--fundo-principal);
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.libras-video-vazio strong {
+  font-family: "Cardo", serif;
+  font-size: 24px;
+}
+
+.libras-video-vazio small {
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 /* =================================
@@ -982,49 +1092,79 @@ DESKTOP
 ================================= */
 
 @media (min-width: 901px) {
-
   body {
-    padding-top: 39px;
+    font-size: 18px;
   }
 
-  .menu {
-    padding: 8px 0;
-    border-bottom: none;
-    background-color: transparent;
-    box-shadow: none;
+  h2 {
+    font-size: 35px;
   }
 
-  .menu-container {
-    max-width: 1180px;
-    justify-content: flex-end;
-    gap: 32px;
+  h3 {
+    font-size: 23px;
   }
 
   .menu a {
-    font-size: 14px;
-  }
-
-  body.scrolled .menu {
-    padding: 10px 0;
-    background-color: var(--fundo-principal);
-    border-bottom: 1px solid rgba(90, 46, 46, 0.15);
-    box-shadow: 0 4px 12px rgba(90, 46, 46, 0.08);
+    font-size: 15px;
   }
 
   body.scrolled .menu a {
-    font-size: 13px;
+    font-size: 14px;
+  }
+
+  .acolhimento p,
+  .citacao {
+    font-size: 27px;
+  }
+
+  .passo .passo-subtitulo {
+    font-size: 21px;
+  }
+
+  .faq summary::after {
+    font-size: 27px;
+  }
+
+  .barra-contato a,
+  footer {
+    font-size: 16px;
+  }
+
+  .barra-contato span {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 900px;
+  }
+
+  .acolhimento-container,
+  .sobre .container,
+  .libras-container,
+  .faq .container {
+    max-width: 840px;
+  }
+
+  .atendimento .container,
+  .como-funciona .container,
+  .encerramento-container {
+    max-width: 1080px;
+  }
+
+  .barra-contato-container {
+    max-width: 980px;
   }
 
   .hero {
-    padding: 60px 0;
+    padding: 20px 0;
   }
 
   .hero-content {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: 30px;
-    max-width: 1000px;
+    gap: 32px;
+    max-width: 1180px;
     text-align: left;
   }
 
@@ -1048,9 +1188,8 @@ DESKTOP
   }
 
   .hero-acoes {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-acoes .botao {
@@ -1076,7 +1215,9 @@ DESKTOP
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
   .desktop-compact-hero::after {
@@ -1090,7 +1231,7 @@ DESKTOP
     background-image: url("cantoneira.png");
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.10;
+    opacity: 0.1;
     pointer-events: none;
   }
 
@@ -1122,7 +1263,7 @@ DESKTOP
 
   .desktop-compact-texto strong {
     display: block;
-    font-family: 'Cardo', serif;
+    font-family: "Cardo", serif;
     font-size: 30px;
     line-height: 1.1;
   }
@@ -1142,8 +1283,8 @@ DESKTOP
     padding: 9px 22px;
     background-color: var(--texto);
     color: var(--fundo-principal);
-    text-decoration: none;
     border-radius: 30px;
+    text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     white-space: nowrap;
@@ -1153,7 +1294,6 @@ DESKTOP
   .desktop-compact-botao:focus-visible {
     background-color: var(--texto-escuro);
   }
-
 }
 
 /* =================================
@@ -1161,7 +1301,6 @@ TABLET
 ================================= */
 
 @media (max-width: 900px) {
-
   .menu-container {
     gap: 26px;
   }
@@ -1178,7 +1317,6 @@ TABLET
   .barra-contato-container {
     gap: 22px;
   }
-
 }
 
 /* =================================
@@ -1186,7 +1324,6 @@ MOBILE
 ================================= */
 
 @media (max-width: 600px) {
-
   body {
     padding-top: 48px;
   }
@@ -1275,7 +1412,12 @@ MOBILE
     font-size: 20px;
   }
 
-  .sobre, .atendimento, .libras, .como-funciona, .faq, .contato {
+  .sobre,
+  .atendimento,
+  .libras,
+  .como-funciona,
+  .faq,
+  .contato {
     scroll-margin-top: 125px;
   }
 
@@ -1413,7 +1555,9 @@ MOBILE
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
   }
 
   body.scrolled .mobile-compact-hero {
@@ -1430,7 +1574,7 @@ MOBILE
 
   .mobile-compact-texto strong {
     display: block;
-    font-family: 'Cardo', serif;
+    font-family: "Cardo", serif;
     font-size: 20px;
     font-weight: 700;
   }
@@ -1447,8 +1591,8 @@ MOBILE
     padding: 7px 8px;
     background-color: var(--texto);
     color: var(--fundo-principal);
-    text-decoration: none;
     border-radius: 24px;
+    text-decoration: none;
     font-size: 12px;
     line-height: 1.1;
     font-weight: 500;
@@ -1481,7 +1625,7 @@ MOBILE
   }
 
   .libras-popup-caixa {
-    width: calc(100vw - 20px);
+    width: calc(100vw - 16px);
     max-height: calc(100vh - 24px);
     padding: 18px 14px 14px;
     overflow-y: auto;
@@ -1528,9 +1672,22 @@ MOBILE
     align-items: center;
   }
 
+  .voltar-portugues {
+    width: auto;
+    max-width: 100%;
+    font-size: 13px;
+  }
 }
 
+/* =================================
+REDUÇÃO DE MOVIMENTO
+================================= */
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   body.modo-libras .conteudo-libras,
   .libras-popup-caixa {
     transition: none;
