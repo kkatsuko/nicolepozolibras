@@ -1144,6 +1144,21 @@ body.popup-libras-aberto {
 }
 
 /* =================================
+HERO COMPACTO NA PÁGINA EM LIBRAS
+================================= */
+
+/* Sem a faixa superior, o hero compacto começa no topo */
+.pagina-libras .desktop-compact-hero {
+  top: 39;
+}
+
+/* O hero compacto fica sobre a página somente após o scroll */
+.pagina-libras .desktop-compact-hero,
+.pagina-libras .mobile-compact-hero {
+  z-index: 2000;
+}
+
+/* =================================
 DESKTOP
 ================================= */
 
@@ -1353,6 +1368,10 @@ DESKTOP
   }
 
 }
+.desktop-compact-hero {
+  display: block !important;
+  position: fixed;
+  top: 39px;
 
 /* =================================
 TABLET
@@ -1806,6 +1825,18 @@ MOBILE
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+}
+
+  /* Hero compacto da página em Libras, sem menu acima */
+.pagina-libras .mobile-compact-hero {
+  padding: 8px 6%;
+}
+
+.pagina-libras .mobile-compact-botao {
+  width: auto;
+  min-width: 74px;
+  padding: 7px 9px;
+  font-size: 11px;
 }
 
 /* =================================
