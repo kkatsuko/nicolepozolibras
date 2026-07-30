@@ -302,6 +302,41 @@
   </footer>
 
   <script>
+  const body = document.body;
+const heroLibras = document.querySelector(".hero-libras");
+const heroCompactoDesktop = document.querySelector(".desktop-compact-hero");
+const heroCompactoMobile = document.querySelector(".mobile-compact-hero");
+
+let limiteParaCompactar = 0;
+
+function calcularLimiteDoScroll() {
+  if (!heroLibras) return;
+
+  limiteParaCompactar =
+    heroLibras.offsetTop + heroLibras.offsetHeight;
+}
+
+function atualizarHeroCompacto() {
+  if (!heroLibras) return;
+
+  const deveCompactar = window.scrollY >= limiteParaCompactar;
+
+  body.classList.toggle("scrolled", deveCompactar);
+}
+
+window.addEventListener("load", () => {
+  calcularLimiteDoScroll();
+  atualizarHeroCompacto();
+});
+
+window.addEventListener("resize", () => {
+  calcularLimiteDoScroll();
+  atualizarHeroCompacto();
+});
+
+window.addEventListener("scroll", atualizarHeroCompacto, {
+  passive: true
+});
     function converterLinkDoVideo(url) {
       if (!url) {
         return "";
