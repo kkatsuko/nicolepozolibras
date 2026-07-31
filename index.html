@@ -55,7 +55,14 @@ Agendar sessão
 <main>
 
 <section class="hero" id="hero">
-<div class="container hero-content">
+<div
+  class="container hero-content conteudo-libras"
+  role="button"
+  tabindex="0"
+  aria-label="Assistir este conteúdo em Libras: Apresentação"
+  data-libras-titulo="Apresentação"
+  data-libras-video=""
+>
 <img alt="Nicole Pozo, psicóloga clínica" class="foto" src="nicole.png"/>
 <div class="hero-texto">
 <h1>Nicole Pozo</h1>
@@ -74,6 +81,9 @@ Agendar sessão
 </a>
 <a class="botao botao-secundario" href="libras.html">Site em Libras</a>
 </div>
+<span aria-hidden="true" class="indicador-libras">
+<img alt="" src="libras.png"/>
+</span>
 </div>
 </section>
 
