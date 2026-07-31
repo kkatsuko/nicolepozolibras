@@ -205,10 +205,6 @@ HERO PRINCIPAL
 BOTÕES E LINKS
 ================================= */
 
-button {
-  font: inherit;
-}
-
 .botao {
   display: inline-block;
   margin-top: 25px;
@@ -224,57 +220,6 @@ button {
 .botao:hover,
 .botao:focus-visible {
   background-color: var(--texto-escuro);
-  transform: translateY(-1px);
-}
-
-.botao-secundario {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 11px 25px;
-  color: var(--texto);
-  background-color: transparent;
-  border: 1px solid var(--texto);
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 500;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease;
-}
-
-.botao-secundario:hover,
-.botao-secundario:focus-visible {
-  color: var(--fundo-principal);
-  background-color: var(--texto);
-  transform: translateY(-1px);
-}
-
-.voltar-portugues {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 18px; /* Ajuste conforme necessário para o espaçamento no hero */
-  padding: 10px 22px;
-  color: var(--texto);
-  background-color: transparent;
-  border: 1px solid var(--texto);
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    transform 0.2s ease;
-}
-
-.voltar-portugues:hover,
-.voltar-portugues:focus-visible {
-  color: var(--fundo-principal);
-  background-color: var(--texto);
   transform: translateY(-1px);
 }
 
@@ -413,7 +358,7 @@ COMO POSSO AJUDAR
 }
 
 /* =================================
-LIBRAS (Seção na Index)
+LIBRAS
 ================================= */
 
 .libras {
@@ -679,7 +624,8 @@ button {
 
 .botao-secundario,
 .desktop-compact-libras,
-.mobile-compact-libras { /* Removido .idioma-link */
+.mobile-compact-libras,
+.idioma-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -705,7 +651,9 @@ button {
 .desktop-compact-libras:hover,
 .desktop-compact-libras:focus-visible,
 .mobile-compact-libras:hover,
-.mobile-compact-libras:focus-visible { /* Removido .idioma-link */
+.mobile-compact-libras:focus-visible,
+.idioma-link:hover,
+.idioma-link:focus-visible {
   color: var(--fundo-principal);
   background-color: var(--texto);
   transform: translateY(-1px);
@@ -740,11 +688,90 @@ PÁGINA EM LIBRAS (libras.html)
 ================================= */
 
 .pagina-libras {
-  padding-top: 0; /* Removido o padding-top extra, já que o hero agora é completo */
+  padding-top: 0;
 }
 
-/* Removido: .topo-idiomas, .topo-idiomas-container, .marca-libras, .seletor-idiomas */
-/* Removido: .hero-libras e seus estilos */
+.topo-idiomas {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 5%;
+  background-color: var(--fundo-principal);
+  border-bottom: 1px solid var(--borda);
+  box-shadow: 0 4px 12px rgba(90, 46, 46, 0.05);
+}
+
+.topo-idiomas-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.marca-libras {
+  color: var(--texto);
+  font-family: 'Cardo', serif;
+  font-size: 23px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.seletor-idiomas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seletor-idiomas span,
+.seletor-idiomas a {
+  padding: 7px 12px;
+  border-radius: 22px;
+  font-size: 13px;
+}
+
+.seletor-idiomas span[aria-current="page"] {
+  color: var(--fundo-principal);
+  background-color: var(--texto);
+}
+
+.hero-libras {
+  position: relative;
+  overflow: hidden;
+  padding: 38px 0 34px;
+  background-color: var(--fundo-destaque);
+}
+
+.hero-libras::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 360px;
+  height: 360px;
+  background-image: url("cantoneira.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero-libras .container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.hero-libras h1 {
+  margin: 0 0 8px;
+}
+
+.hero-libras p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 18px;
+}
 
 .grade-videos-libras {
   display: grid;
@@ -849,7 +876,16 @@ PÁGINA EM LIBRAS (libras.html)
   margin-top: 0;
 }
 
-/* Removido: .instrucao-edicao */
+.instrucao-edicao {
+  max-width: 840px;
+  margin: 0 auto 22px;
+  padding: 14px 17px;
+  background-color: rgba(230, 210, 181, 0.42);
+  border: 1px dashed var(--borda);
+  border-radius: 12px;
+  text-align: left;
+  font-size: 14px;
+}
 
 /* =================================
 MODO LIBRAS COM POP-UP DE VÍDEO
@@ -950,9 +986,9 @@ body.modo-libras .contato {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(720px, calc(100vw - 32px));
+  width: min(560px, calc(100vw - 32px));
   box-sizing: border-box;
-  padding: 26px;
+  padding: 22px;
   background-color: var(--fundo-principal);
   border: 1px solid var(--borda);
   border-radius: 18px;
@@ -1594,7 +1630,7 @@ MOBILE
   }
 
   .libras-popup-caixa {
-    width: calc(100vw - 16px);
+    width: calc(100vw - 20px);
     max-height: calc(100vh - 24px);
     padding: 18px 14px 14px;
     overflow-y: auto;
@@ -1615,15 +1651,29 @@ MOBILE
     padding-top: 0;
   }
 
-  .hero-libras { /* Removido este bloco */
+  .topo-idiomas {
+    padding: 10px 4%;
+  }
+
+  .marca-libras {
+    font-size: 19px;
+  }
+
+  .seletor-idiomas span,
+  .seletor-idiomas a {
+    padding: 6px 9px;
+    font-size: 11px;
+  }
+
+  .hero-libras {
     padding: 28px 0 26px;
   }
 
-  .hero-libras h1 { /* Removido este bloco */
+  .hero-libras h1 {
     font-size: 35px;
   }
 
-  .hero-libras p { /* Removido este bloco */
+  .hero-libras p {
     font-size: 16px;
   }
 
@@ -1639,12 +1689,6 @@ MOBILE
   .acoes-libras {
     flex-direction: column;
     align-items: center;
-  }
-
-  .voltar-portugues {
-    width: auto;
-    max-width: 100%;
-    font-size: 13px;
   }
 
 }
