@@ -687,20 +687,6 @@ button {
 PÁGINA EM LIBRAS (libras.html)
 ================================= */
 
-.pagina-libras {
-  padding-top: 0;
-}
-
-.topo-idiomas {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 12px 5%;
-  background-color: var(--fundo-principal);
-  border-bottom: 1px solid var(--borda);
-  box-shadow: 0 4px 12px rgba(90, 46, 46, 0.05);
-}
-
 .topo-idiomas-container {
   display: flex;
   align-items: center;
@@ -734,13 +720,6 @@ PÁGINA EM LIBRAS (libras.html)
 .seletor-idiomas span[aria-current="page"] {
   color: var(--fundo-principal);
   background-color: var(--texto);
-}
-
-.hero-libras {
-  position: relative;
-  overflow: hidden;
-  padding: 38px 0 34px;
-  background-color: var(--fundo-destaque);
 }
 
 .hero-libras::after {
@@ -876,16 +855,6 @@ PÁGINA EM LIBRAS (libras.html)
   margin-top: 0;
 }
 
-.instrucao-edicao {
-  max-width: 840px;
-  margin: 0 auto 22px;
-  padding: 14px 17px;
-  background-color: rgba(230, 210, 181, 0.42);
-  border: 1px dashed var(--borda);
-  border-radius: 12px;
-  text-align: left;
-  font-size: 14px;
-}
 
 /* =================================
 MODO LIBRAS COM POP-UP DE VÍDEO
@@ -1647,14 +1616,6 @@ MOBILE
     max-height: 72vh;
   }
 
-  .pagina-libras {
-    padding-top: 0;
-  }
-
-  .topo-idiomas {
-    padding: 10px 4%;
-  }
-
   .marca-libras {
     font-size: 19px;
   }
@@ -1663,10 +1624,6 @@ MOBILE
   .seletor-idiomas a {
     padding: 6px 9px;
     font-size: 11px;
-  }
-
-  .hero-libras {
-    padding: 28px 0 26px;
   }
 
   .hero-libras h1 {
