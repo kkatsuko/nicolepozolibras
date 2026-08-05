@@ -21,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  padding-top: 60px;
+  padding-top: 55px;
   font-family: 'Montserrat', sans-serif;
   background-color: var(--fundo-principal);
   color: var(--texto);
@@ -687,6 +687,16 @@ button {
 PÁGINA EM LIBRAS (libras.html)
 ================================= */
 
+/* Página em Libras sem menu superior */
+
+body.pagina-libras {
+  padding-top: 0;
+}
+
+body.pagina-libras .desktop-compact-hero {
+  top: 0;
+}
+
 .topo-idiomas-container {
   display: flex;
   align-items: center;
@@ -897,11 +907,22 @@ body.modo-libras .conteudo-libras:focus-visible {
   display: none;
 }
 
+body.modo-libras .card-atendimento h3 {
+  padding-right: 42px;
+}
+
+body.modo-libras .passo h3,
+body.modo-libras .passo .passo-subtitulo {
+  padding-right: 38px;
+  padding-left: 38px;
+}
+
 body.modo-libras .indicador-libras {
   display: inline-flex;
   position: absolute;
+  top: 10px;
   right: 12px;
-  bottom: 10px;
+  bottom: auto;
   z-index: 3;
   align-items: center;
   justify-content: center;
@@ -920,13 +941,13 @@ body.modo-libras .indicador-libras img {
   object-fit: contain;
 }
 
-body.modo-libras .hero-content,
-body.modo-libras .sobre .container,
-body.modo-libras .libras .container,
-body.modo-libras .atendimento .container,
-body.modo-libras .chamada-final,
-body.modo-libras .contato {
-  padding-bottom: 42px;
+body.modo-libras .faq details .indicador-libras {
+  top: 8px;
+  right: 52px;
+}
+
+body.modo-libras .faq summary {
+  padding-right: 92px;
 }
 
 /* Pop-up de vídeo */
@@ -955,9 +976,11 @@ body.modo-libras .contato {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(560px, calc(100vw - 32px));
+  width: min(999px, calc(100vw - 40px));
+  max-height: calc(100vh - 32px);
   box-sizing: border-box;
-  padding: 22px;
+  padding: 24px;
+  overflow-y: auto;
   background-color: var(--fundo-principal);
   border: 1px solid var(--borda);
   border-radius: 18px;
@@ -1280,6 +1303,10 @@ TABLET
 
 @media (max-width: 900px) {
 
+  body:not(.pagina-libras) {
+  padding-top: 51px;
+}
+  
   .menu-container {
     gap: 26px;
   }
@@ -1306,8 +1333,35 @@ MOBILE
 @media (max-width: 600px) {
 
   body {
-    padding-top: 48px;
+    padding-top: 43px;
   }
+  
+  body.pagina-libras {
+  padding-top: 0;
+}
+
+body.pagina-libras .mobile-compact-hero {
+  padding-top: 8px;
+    padding-right: 4%;
+  padding-left: 4%;
+}
+
+body.pagina-libras .mobile-compact-acoes {
+  gap: 5px;
+}
+
+body.pagina-libras .mobile-compact-botao {
+  width: auto;
+  min-width: 54px;
+  padding: 7px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+body.pagina-libras .mobile-compact-libras {
+  width: auto;
+  min-width: 48px;
+}
 
   section {
     padding: 30px 0;
@@ -1591,19 +1645,26 @@ MOBILE
     text-align: center;
   }
 
-  body.modo-libras .indicador-libras {
-    right: 8px;
-    bottom: 8px;
-    width: 28px;
-    height: 28px;
-  }
+body.modo-libras .indicador-libras {
+  top: 8px;
+  right: 8px;
+  bottom: auto;
+  width: 28px;
+  height: 28px;
+}
 
-  .libras-popup-caixa {
-    width: calc(100vw - 20px);
-    max-height: calc(100vh - 24px);
-    padding: 18px 14px 14px;
-    overflow-y: auto;
-  }
+body.modo-libras .faq details .indicador-libras {
+  top: 8px;
+  right: 47px;
+}
+
+.libras-popup-caixa {
+  width: calc(100vw - 10px);
+  max-height: calc(100dvh - 10px);
+  padding: 18px 10px 10px;
+  overflow-y: auto;
+  border-radius: 14px;
+}
 
   .libras-popup-caixa h2 {
     margin-right: 38px;
