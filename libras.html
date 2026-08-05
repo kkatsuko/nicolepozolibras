@@ -20,54 +20,122 @@
 </head>
 
 <body class="pagina-libras">
+<header class="menu">
+  <nav aria-label="Navegação principal" class="menu-container">
+    <a href="#hero">Início</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
 
-  <header class="topo-idiomas">
-    <div class="topo-idiomas-container">
+<div class="mobile-compact-hero">
+  <div class="mobile-compact-texto">
+    <strong>Nicole Pozo</strong>
+    <span>Psicóloga Clínica • CRP 06/161340</span>
+  </div>
 
-      <a class="marca-libras" href="index.html">
-        Nicole Pozo
+  <div class="mobile-compact-acoes">
+    <a
+      class="mobile-compact-botao mobile-compact-libras"
+      href="index.html"
+    >
+      Português
+    </a>
+
+    <a
+      class="mobile-compact-botao"
+      href="https://calendar.app.google/ftWj5yFwSw7C7HyG9"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Agendar<br>sessão
+    </a>
+  </div>
+</div>
+
+<div class="desktop-compact-hero">
+  <div class="desktop-compact-container">
+
+    <img
+      alt=""
+      class="desktop-compact-foto"
+      src="nicole.png"
+    >
+
+    <div class="desktop-compact-texto">
+      <strong>Nicole Pozo</strong>
+      <span>Psicóloga Clínica • CRP 06/161340</span>
+    </div>
+
+    <div class="desktop-compact-acoes">
+      <a
+        class="desktop-compact-botao desktop-compact-libras"
+        href="index.html"
+      >
+        Site em Português
       </a>
 
-      <nav class="seletor-idiomas" aria-label="Seleção de idioma">
-        <a class="idioma-link" href="index.html">
-          Português
-        </a>
-
-        <span aria-current="page">
-          Libras
-        </span>
-      </nav>
-
+      <a
+        class="desktop-compact-botao"
+        href="https://calendar.app.google/ftWj5yFwSw7C7HyG9"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Agendar sessão
+      </a>
     </div>
-  </header>
 
-  <main>
+  </div>
+</div>
 
-    <section class="hero-libras">
-      <div class="container">
+<main>
 
-        <h1>Site em Libras</h1>
+  <section class="hero" id="hero">
+    <div class="container hero-content">
 
-        <p>
-          Aqui você encontra as principais informações sobre meu trabalho
-          em vídeos em Libras, com texto em português disponível em cada seção.
+      <img
+        alt="Nicole Pozo, psicóloga clínica"
+        class="foto"
+        src="nicole.png"
+      >
+
+      <div class="hero-texto">
+        <h1>Nicole Pozo</h1>
+
+        <p class="subtitulo">
+          Psicóloga Clínica • CRP 06/161340
         </p>
 
+        <p class="infos">
+          <span>Atendimento Online</span>
+          <span>Fluente e sinalizante em Libras</span>
+          <span>A partir de 17 anos</span>
+        </p>
       </div>
-    </section>
 
-    <section class="videos-libras">
+      <div class="hero-acoes">
+        <a
+          class="botao hero-botao"
+          href="https://calendar.app.google/ftWj5yFwSw7C7HyG9"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Agendar sessão
+        </a>
+
+        <a
+          class="botao botao-secundario"
+          href="index.html"
+        >
+          Site em Português
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+    <section class="videos-libras" id="videos">
       <div class="container">
-
-        <div class="instrucao-edicao">
-          <strong>Para adicionar cada vídeo:</strong>
-
-          <p>
-            cole o link do YouTube ou de um arquivo MP4 dentro do atributo
-            <code>data-video-url</code> do card correspondente.
-            Enquanto o campo estiver vazio, o site exibirá “Vídeo em breve”.
-          </p>
-        </div>
 
         <div class="grade-videos-libras">
 
@@ -262,7 +330,7 @@
       </div>
     </section>
 
-    <section class="encerramento">
+    <section class="encerramento" id="contato">
       <div class="container">
 
         <h2>Vamos conversar?</h2>
@@ -299,6 +367,51 @@
   </footer>
 
   <script>
+  const body = document.body;
+const hero = document.querySelector(".hero");
+const menu = document.querySelector(".menu");
+
+let limiteParaCompactar = 0;
+
+function calcularLimiteDoScroll() {
+  if (!hero || !menu) {
+    return;
+  }
+
+  limiteParaCompactar =
+    hero.offsetTop +
+    hero.offsetHeight -
+    menu.offsetHeight;
+}
+
+function atualizarHeaderCompacto() {
+  const margemParaRemover = 60;
+
+  if (window.scrollY >= limiteParaCompactar) {
+    body.classList.add("scrolled");
+  } else if (
+    window.scrollY <
+    limiteParaCompactar - margemParaRemover
+  ) {
+    body.classList.remove("scrolled");
+  }
+}
+
+window.addEventListener("load", function () {
+  calcularLimiteDoScroll();
+  atualizarHeaderCompacto();
+});
+
+window.addEventListener("resize", function () {
+  calcularLimiteDoScroll();
+  atualizarHeaderCompacto();
+});
+
+window.addEventListener(
+  "scroll",
+  atualizarHeaderCompacto,
+  { passive: true }
+);
     function converterLinkDoVideo(url) {
       if (!url) {
         return "";
